@@ -22,19 +22,19 @@ export const siteConfig = {
 export const heroContent = {
   eyebrow: 'Software Developer',
   title: 'Jesse',
-  subtitle: 'Frontend systems, backend APIs, and full-stack products built with precision.',
+  subtitle: 'Full-stack products, backend systems, and polished frontend work.',
   description:
-    'I build modern web products with polished interfaces, reliable backend architecture, and technical decisions that hold up beyond the first release.',
+    'I build web products with reliable APIs, clean architecture, and interfaces that feel clear, fast, and production-ready.',
   primaryCta: { label: 'View Projects', href: '#projects' },
   secondaryCta: { label: 'Contact Me', href: '#contact' },
   highlights: [
-    'React and TypeScript interfaces',
-    'Backend services and API design',
-    'Full-stack product delivery',
+    'Full-stack product development',
+    'Backend systems and API design',
+    'Responsive frontend interfaces',
   ],
   stats: [
-    { label: 'Focus', value: 'Frontend, backend, and product execution' },
-    { label: 'Approach', value: 'Clean architecture, strong UX, and scalable implementation' },
+    { label: 'Focus', value: 'Full-stack products, backend services, and interface systems' },
+    { label: 'Approach', value: 'Clear architecture, reliable delivery, and polished execution' },
   ],
   portrait: {
     src: portraitPlaceholder,
@@ -44,18 +44,18 @@ export const heroContent = {
 
 export const aboutContent = {
   eyebrow: 'About',
-  title: 'I build software that is clear to use, reliable to run, and clean to maintain.',
+  title: 'I build software that is clear, reliable, and ready to scale.',
   paragraphs: [
-    'I work across backend systems, APIs, polished frontend interfaces, and practical full-stack products. My focus is building software that solves real problems without sacrificing clarity, maintainability, or user experience.',
-    'That means thinking carefully about architecture, service boundaries, and implementation details while still caring about how the product feels in the hands of the people using it. I value systems that are dependable under pressure and interfaces that feel intentional instead of improvised.',
-    'Whether I am shaping a backend workflow, designing an API, or refining a frontend experience, I aim for software that is practical, well-structured, and ready to grow with the product.',
+    'I build full-stack products, backend services, and frontend interfaces with the same priority: ship software that works well, reads clearly, and holds up in production.',
+    'My work sits across API design, service architecture, database modeling, and UI implementation. I care about decisions that make systems easier to extend, debug, and operate over time.',
+    'Whether the task is a backend workflow or a product-facing interface, I aim for practical solutions, consistent execution, and software that feels considered from end to end.',
   ],
   highlightsTitle: 'How I approach building',
   highlights: [
-    'Clean architecture over unnecessary complexity',
-    'Practical full-stack products with real delivery value',
-    'Reliable backend systems and clear API design',
-    'Thoughtful UI that supports the product, not distracts from it',
+    'Clean architecture with practical tradeoffs',
+    'Reliable APIs and service design',
+    'Full-stack builds with product thinking',
+    'Frontend work with strong visual clarity',
   ],
 } as const;
 
@@ -63,26 +63,26 @@ export const skillsContent = {
   eyebrow: 'My Skills',
   title: 'A focused stack for modern product development.',
   description:
-    'I work across the interface, API, and persistence layers with tools that support clean implementation, maintainable systems, and practical delivery.',
+    'A practical stack for building modern products across the interface, API, and data layers.',
   groups: [
     {
       title: 'Frontend',
-      summary: 'Modern UI foundations for fast, maintainable product interfaces.',
+      summary: 'Modern frontend tools for responsive interfaces, reusable UI, and clean product implementation.',
       items: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
     },
     {
       title: 'Backend',
-      summary: 'Service and API tools for building dependable application logic.',
+      summary: 'Backend foundations for service logic, API design, authentication, and application structure.',
       items: ['Node.js', 'Express', 'REST APIs', 'Authentication'],
     },
     {
       title: 'Databases',
-      summary: 'Relational data tooling for structured backend systems.',
+      summary: 'Relational data tools for structured models, predictable queries, and maintainable persistence.',
       items: ['MySQL', 'PostgreSQL', 'TypeORM'],
     },
     {
       title: 'Tools / Workflow',
-      summary: 'Everyday tooling that supports clean collaboration and shipping.',
+      summary: 'Workflow tools that support collaboration, debugging, versioning, and delivery.',
       items: ['Git', 'GitHub', 'Postman', 'Docker'],
     },
   ],
@@ -90,15 +90,15 @@ export const skillsContent = {
 
 export const featuredProjectsContent = {
   eyebrow: 'Featured Projects',
-  title: 'Selected work that shows product thinking, backend depth, and full-stack execution.',
+  title: 'Projects that show how I build products and systems.',
   description:
-    'These projects are meant to show more than familiarity with tools. Each one reflects how I approach architecture, product experience, API design, and implementation quality.',
+    'A selection of work across full-stack delivery, backend architecture, and polished interface execution.',
   projects: [
     {
       name: 'Dishpatch',
       category: 'Full-Stack',
       description:
-        'A delivery-focused product experience built around operational clarity, role-aware workflows, and a polished interface that supports real application flow from dashboard to order handling.',
+        'A full-stack delivery platform built around clear operational workflows, structured order management, and a polished interface for day-to-day product use.',
       stack: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB'],
       previewLabel: 'Operations dashboard',
       links: [
@@ -110,7 +110,7 @@ export const featuredProjectsContent = {
       name: 'Event-Driven Notification Platform',
       category: 'Backend',
       description:
-        'An event-driven service layer designed to process domain events, coordinate asynchronous delivery, and model backend systems that need reliability beyond basic request-response flows.',
+        'A backend platform for processing domain events, coordinating asynchronous delivery, and modeling services that need reliability beyond simple request-response flows.',
       stack: ['Node.js', 'Redis', 'Queues', 'Webhooks', 'Docker'],
       previewLabel: 'Event pipeline',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/event-driven-notification-platform' }],
@@ -119,7 +119,7 @@ export const featuredProjectsContent = {
       name: 'Authentication Service API',
       category: 'Backend',
       description:
-        'A dedicated authentication API focused on secure account flows, token handling, and clean service boundaries that can support broader application architecture.',
+        'A focused authentication service covering secure account flows, token-based access, and boundaries that fit cleanly into larger product architecture.',
       stack: ['Node.js', 'Express', 'JWT', 'PostgreSQL'],
       previewLabel: 'Auth service',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/authentication-service-api' }],
@@ -128,7 +128,7 @@ export const featuredProjectsContent = {
       name: 'Frontend Templates',
       category: 'Frontend',
       description:
-        'A set of modern product-style interfaces and landing pages that demonstrate visual hierarchy, responsive layout discipline, and reusable UI system thinking.',
+        'A collection of product-style interfaces that show responsive layout discipline, reusable UI structure, and strong frontend execution.',
       stack: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
       previewLabel: 'Product interface',
       links: [
@@ -141,15 +141,15 @@ export const featuredProjectsContent = {
 
 export const otherProjectsContent = {
   eyebrow: 'Other Projects',
-  title: 'Additional builds across backend utilities, templates, and mobile workflow.',
+  title: 'Additional work across APIs, templates, and mobile tooling.',
   description:
-    'These projects expand the picture of what I build: practical APIs, reusable frontend surfaces, and implementation work that supports real product scenarios.',
+    'More projects that expand the stack: backend utilities, frontend templates, and mobile workflows built with the same focus on clarity and execution.',
   projects: [
     {
       name: 'URL Shortener API',
       category: 'Backend',
       summary:
-        'A link management service built around short-code generation, redirect handling, and a clean backend structure that can be extended with analytics and expiry rules.',
+        'A URL service built around short-code generation, redirect handling, and a backend structure that can support analytics and expiry rules.',
       stack: ['Node.js', 'Express', 'MongoDB'],
       previewLabel: 'Redirect service',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/url-shortener-api' }],
@@ -158,7 +158,7 @@ export const otherProjectsContent = {
       name: 'Image Hosting Platform',
       category: 'Full-Stack',
       summary:
-        'A media upload and management workflow focused on structured file handling, user-facing upload experience, and backend organization for hosted assets.',
+        'A media workflow for structured uploads, asset management, and a clean user-facing experience backed by organized file handling.',
       stack: ['React', 'Node.js', 'Cloud Storage'],
       previewLabel: 'Media workflow',
       links: [
@@ -170,7 +170,7 @@ export const otherProjectsContent = {
       name: 'Business Website Template',
       category: 'Frontend',
       summary:
-        'A polished business-facing web template built to showcase clean layout hierarchy, responsive marketing structure, and a refined conversion-oriented presentation.',
+        'A business-focused website template built around clean hierarchy, responsive layout, and a professional marketing presentation.',
       stack: ['React', 'TypeScript', 'Tailwind CSS'],
       previewLabel: 'Marketing site',
       links: [
@@ -182,7 +182,7 @@ export const otherProjectsContent = {
       name: 'Dashboard Template',
       category: 'Frontend',
       summary:
-        'A reusable admin-style interface that demonstrates data-dense layout handling, UI consistency, and scalable component structure for dashboard products.',
+        'A reusable dashboard interface designed for data-heavy layouts, UI consistency, and scalable component structure.',
       stack: ['React', 'TypeScript', 'Tailwind CSS'],
       previewLabel: 'Admin interface',
       links: [
@@ -194,7 +194,7 @@ export const otherProjectsContent = {
       name: 'QR Attendance Android App',
       category: 'Android',
       summary:
-        'A QR-based attendance workflow for fast session check-ins, practical mobile scanning, and lightweight operational tracking in an Android-first experience.',
+        'An Android attendance workflow built around QR-based check-ins, fast scanning, and lightweight operational tracking.',
       stack: ['Kotlin', 'Android', 'QR Scanning'],
       previewLabel: 'Mobile check-in',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/qr-attendance-android-app' }],
@@ -204,12 +204,12 @@ export const otherProjectsContent = {
 
 export const contactContent = {
   eyebrow: 'Contact Me',
-  title: 'Have a project, role, or collaboration in mind?',
+  title: "Let's talk about your next product or system.",
   description:
-    'The fastest way to reach me is by email. If you need a developer who can work across backend systems, full-stack products, APIs, and polished interfaces, I am open to the conversation.',
+    'Email is the best way to reach me. I am open to product work, freelance projects, engineering roles, and collaborations that need strong full-stack execution.',
   primaryLabel: 'Email',
   primaryValue: 'goodluckkassa6@gmail.com',
   primaryHref: 'mailto:goodluckkassa6@gmail.com',
   secondaryLabel: 'Best For',
-  secondaryValue: 'Project inquiries, freelance work, collaboration, and product-focused engineering roles',
+  secondaryValue: 'Product work, backend services, full-stack builds, and engineering collaboration',
 } as const;
