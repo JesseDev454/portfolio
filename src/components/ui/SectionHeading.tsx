@@ -6,12 +6,13 @@ type SectionHeadingProps = {
   eyebrow: string;
   title: string;
   description: ReactNode;
+  align?: 'left' | 'center';
 };
 
-export function SectionHeading({ eyebrow, title, description }: SectionHeadingProps) {
+export function SectionHeading({ eyebrow, title, description, align = 'left' }: SectionHeadingProps) {
   return (
     <motion.div
-      className="max-w-3xl"
+      className={align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.35 }}
@@ -23,4 +24,3 @@ export function SectionHeading({ eyebrow, title, description }: SectionHeadingPr
     </motion.div>
   );
 }
-
