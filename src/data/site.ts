@@ -88,16 +88,58 @@ export const skillsContent = {
   ],
 } as const;
 
+export const featuredProjectsContent = {
+  eyebrow: 'Featured Projects',
+  title: 'Selected work that shows product thinking, backend depth, and full-stack execution.',
+  description:
+    'These projects are meant to show more than familiarity with tools. Each one reflects how I approach architecture, product experience, API design, and implementation quality.',
+  projects: [
+    {
+      name: 'Dishpatch',
+      category: 'Full-Stack',
+      description:
+        'A delivery-focused product experience built around operational clarity, role-aware workflows, and a polished interface that supports real application flow from dashboard to order handling.',
+      stack: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB'],
+      previewLabel: 'Operations dashboard',
+      links: [
+        { label: 'Live Demo', href: 'https://dishpatch-demo.vercel.app' },
+        { label: 'GitHub', href: 'https://github.com/JesseDev454/dishpatch' },
+      ],
+    },
+    {
+      name: 'Event-Driven Notification Platform',
+      category: 'Backend',
+      description:
+        'An event-driven service layer designed to process domain events, coordinate asynchronous delivery, and model backend systems that need reliability beyond basic request-response flows.',
+      stack: ['Node.js', 'Redis', 'Queues', 'Webhooks', 'Docker'],
+      previewLabel: 'Event pipeline',
+      links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/event-driven-notification-platform' }],
+    },
+    {
+      name: 'Authentication Service API',
+      category: 'Backend',
+      description:
+        'A dedicated authentication API focused on secure account flows, token handling, and clean service boundaries that can support broader application architecture.',
+      stack: ['Node.js', 'Express', 'JWT', 'PostgreSQL'],
+      previewLabel: 'Auth service',
+      links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/authentication-service-api' }],
+    },
+    {
+      name: 'Frontend Templates',
+      category: 'Frontend',
+      description:
+        'A set of modern product-style interfaces and landing pages that demonstrate visual hierarchy, responsive layout discipline, and reusable UI system thinking.',
+      stack: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      previewLabel: 'Product interface',
+      links: [
+        { label: 'Live Demo', href: 'https://frontend-templates-demo.vercel.app' },
+        { label: 'GitHub', href: 'https://github.com/JesseDev454/frontend-templates' },
+      ],
+    },
+  ],
+} as const;
+
 export const placeholderSections = [
-  {
-    id: 'projects',
-    eyebrow: 'Projects',
-    title: 'Project anchors are prepared for proof-driven portfolio content.',
-    description:
-      'This section will soon showcase full-stack products, backend APIs, frontend builds, and live demos in a stronger case-study format.',
-    accent: 'Proof through shipped work',
-    points: ['Featured builds', 'Live demo links', 'Backend repo references'],
-  },
   {
     id: 'contact',
     eyebrow: 'Contact',
