@@ -6,9 +6,9 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="section-divider mt-6 border-t border-white/10 py-10 sm:py-12">
+    <footer className="section-divider mt-8 border-t border-white/10 py-10 sm:py-12">
       <Container className="flex flex-col gap-6 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between">
-        <p>
+        <p className="text-slate-500">
           {siteConfig.name} | {year}
         </p>
 
@@ -20,7 +20,7 @@ export function SiteFooter() {
               target="_blank"
               rel="noreferrer noopener"
               aria-label={`${link.label} profile`}
-              className="interactive-surface inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-slate-200"
+              className="interactive-surface inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2.5 text-slate-200"
             >
               <SocialIcon label={link.label} className="h-4 w-4" />
               {link.label}

@@ -12,15 +12,15 @@ type SectionHeadingProps = {
 export function SectionHeading({ eyebrow, title, description, align = 'left' }: SectionHeadingProps) {
   return (
     <motion.div
-      className={align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}
+      className={align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-[44rem]'}
       initial="hidden"
       whileInView="visible"
       viewport={revealViewport}
       variants={fadeInUp}
     >
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-300">{eyebrow}</p>
-      <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.7rem]">{title}</h2>
-      <div className="mt-5 text-base leading-8 text-slate-300">{description}</div>
+      <p className="eyebrow-chip text-[11px] font-semibold uppercase tracking-[0.28em] text-cyan-100">{eyebrow}</p>
+      <h2 className="mt-5 font-display text-3xl font-bold tracking-[-0.04em] text-white sm:text-4xl lg:text-[3rem] lg:leading-[1.02]">{title}</h2>
+      <div className="mt-6 text-base leading-8 text-slate-300">{description}</div>
     </motion.div>
   );
 }

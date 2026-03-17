@@ -15,7 +15,9 @@ export function SiteShell({ children }: SiteShellProps) {
       >
         Skip to content
       </a>
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[32rem] bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.14),transparent_42%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.12),transparent_40%)]" />
+      <div className="pointer-events-none absolute left-[-12rem] top-[22rem] -z-10 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(14,165,233,0.08),transparent_62%)] blur-3xl" />
+      <div className="pointer-events-none absolute right-[-14rem] top-[60rem] -z-10 h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(56,189,248,0.06),transparent_64%)] blur-3xl" />
       <SiteHeader />
       <main id="main-content" tabIndex={-1} className="relative z-10">
         {children}

@@ -31,20 +31,20 @@ export function CompactProjectCard({ project, index }: CompactProjectCardProps) 
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">{project.category}</p>
-            <h3 className="mt-3 font-display text-xl font-bold tracking-tight text-white">{project.name}</h3>
+            <h3 className="mt-3 font-display text-[1.35rem] font-bold tracking-[-0.03em] text-white">{project.name}</h3>
           </div>
-          <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
+          <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300">
             {project.previewLabel}
           </span>
         </div>
 
         <p className="mt-4 text-sm leading-7 text-slate-300">{project.summary}</p>
 
-        <div className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-6 flex flex-wrap gap-2">
           {project.stack.map((item) => (
             <span
               key={item}
-              className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-slate-100"
+              className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-100"
             >
               {item}
             </span>

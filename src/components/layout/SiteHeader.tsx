@@ -30,13 +30,16 @@ export function SiteHeader() {
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/68 shadow-[0_10px_35px_rgba(2,6,23,0.22)] backdrop-blur-2xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/64 shadow-[0_12px_38px_rgba(2,6,23,0.26)] backdrop-blur-2xl">
       <Container className="flex items-center justify-between gap-4 py-4">
-        <a href="#home" className="hover-link font-display text-lg font-bold tracking-tight text-slate-50">
-          {siteConfig.name}
+        <a href="#home" className="group inline-flex items-center gap-3 text-slate-50">
+          <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-cyan-400/16 bg-[linear-gradient(180deg,rgba(103,232,249,0.18),rgba(255,255,255,0.02))] text-sm font-bold text-cyan-100 shadow-[0_12px_30px_rgba(8,145,178,0.12)] transition duration-200 group-hover:border-cyan-300/28 group-hover:text-white">
+            J
+          </span>
+          <span className="font-display text-lg font-bold tracking-tight">{siteConfig.name}</span>
         </a>
 
-        <nav aria-label="Primary" className="hidden items-center gap-2 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] md:flex">
           {siteConfig.nav.map((item) => (
             <a
               key={item.href}
@@ -45,8 +48,8 @@ export function SiteHeader() {
               className={cn(
                 'rounded-full px-4 py-2 text-sm font-medium transition duration-200',
                 activeSection === item.id
-                  ? 'bg-cyan-400/12 text-cyan-200 shadow-[0_8px_24px_rgba(34,211,238,0.08)]'
-                  : 'text-slate-300 hover:-translate-y-0.5 hover:bg-white/5 hover:text-cyan-200',
+                  ? 'bg-[linear-gradient(180deg,rgba(103,232,249,0.14),rgba(255,255,255,0.04))] text-cyan-100 shadow-[0_10px_30px_rgba(8,145,178,0.1)]'
+                  : 'text-slate-400 hover:-translate-y-0.5 hover:bg-white/5 hover:text-slate-100',
               )}
             >
               {item.label}
@@ -60,7 +63,7 @@ export function SiteHeader() {
             target="_blank"
             rel="noreferrer noopener"
             aria-label="GitHub"
-            className="interactive-surface flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200"
+            className="interactive-surface flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-slate-200"
           >
             <SocialIcon label="GitHub" className="h-5 w-5" />
           </a>
@@ -72,7 +75,7 @@ export function SiteHeader() {
           aria-controls="mobile-navigation"
           aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           onClick={() => setIsMenuOpen((value) => !value)}
-          className="interactive-surface flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-100 md:hidden"
+          className="interactive-surface flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-slate-100 md:hidden"
         >
           {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
@@ -96,7 +99,7 @@ export function SiteHeader() {
           <div
             id="mobile-navigation"
             className={cn(
-              'surface tech-outline absolute inset-x-6 top-3 rounded-3xl p-4 shadow-glow transition duration-200 sm:inset-x-8',
+              'surface tech-outline absolute inset-x-6 top-3 rounded-[1.75rem] p-4 shadow-glow transition duration-200 sm:inset-x-8',
               isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0',
             )}
           >
@@ -110,8 +113,8 @@ export function SiteHeader() {
                   className={cn(
                     'rounded-2xl px-4 py-3 text-sm font-medium transition duration-200',
                     activeSection === item.id
-                      ? 'bg-cyan-400/12 text-cyan-200'
-                      : 'text-slate-200 hover:bg-white/5 hover:text-cyan-200',
+                      ? 'bg-[linear-gradient(180deg,rgba(103,232,249,0.14),rgba(255,255,255,0.04))] text-cyan-100'
+                      : 'text-slate-200 hover:bg-white/5 hover:text-white',
                   )}
                 >
                   {item.label}
@@ -119,13 +122,13 @@ export function SiteHeader() {
               ))}
             </nav>
 
-            <div className="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+            <div className="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
               <span className="text-sm text-slate-300">GitHub</span>
               <a
                 href={siteConfig.githubUrl}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="interactive-surface flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-950/60 text-slate-100"
+                className="interactive-surface flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/60 text-slate-100"
                 aria-label="GitHub"
               >
                 <SocialIcon label="GitHub" className="h-5 w-5" />

@@ -14,7 +14,7 @@ export function SkillsSection() {
         description={skillsContent.description}
       />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-14 grid gap-6 md:grid-cols-2">
         {skillsContent.groups.map((group, index) => (
           <motion.div
             key={group.title}
@@ -25,14 +25,21 @@ export function SkillsSection() {
             transition={{ delay: index * 0.05 }}
           >
             <Card className="h-full p-6 sm:p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">{group.title}</p>
-              <p className="mt-3 text-base leading-8 text-slate-300">{group.summary}</p>
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">{group.title}</p>
+                  <p className="mt-3 max-w-sm text-base leading-8 text-slate-300">{group.summary}</p>
+                </div>
+                <span className="hidden rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 sm:inline-flex">
+                  {String(group.items.length).padStart(2, '0')}
+                </span>
+              </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap gap-3">
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="interactive-surface rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100"
+                    className="interactive-surface rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-slate-100"
                   >
                     {item}
                   </span>
