@@ -12,7 +12,7 @@ type SectionProps = {
 
 export function Section({ id, className, containerClassName, spacing = 'default', children }: SectionProps) {
   const spacingClassName =
-    spacing === 'hero' ? 'py-20 sm:py-24 lg:py-28' : spacing === 'compact' ? 'py-16 sm:py-20' : 'py-20 sm:py-24';
+    spacing === 'hero' ? 'py-20 sm:py-24 lg:py-32' : spacing === 'compact' ? 'py-16 sm:py-20' : 'py-20 sm:py-24 lg:py-28';
 
   return (
     <section id={id} className={cn('section-anchor', spacingClassName, className)}>

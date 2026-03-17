@@ -3,7 +3,7 @@ import { Card } from '../../components/ui/Card';
 import { Section } from '../../components/ui/Section';
 import { SectionHeading } from '../../components/ui/SectionHeading';
 import { skillsContent } from '../../data/site';
-import { fadeInUp } from '../../lib/motion';
+import { fadeInUp, revealViewport } from '../../lib/motion';
 
 export function SkillsSection() {
   return (
@@ -20,7 +20,7 @@ export function SkillsSection() {
             key={group.title}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={revealViewport}
             variants={fadeInUp}
             transition={{ delay: index * 0.05 }}
           >
@@ -32,7 +32,7 @@ export function SkillsSection() {
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100 transition hover:border-cyan-400/25 hover:text-cyan-200"
+                    className="interactive-surface rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-100"
                   >
                     {item}
                   </span>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Card } from '../ui/Card';
-import { fadeInUp } from '../../lib/motion';
+import { fadeInUp, revealViewport } from '../../lib/motion';
 
 type CompactProjectCardProps = {
   project: {
@@ -22,12 +22,12 @@ export function CompactProjectCard({ project, index }: CompactProjectCardProps) 
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={revealViewport}
       variants={fadeInUp}
       transition={{ delay: index * 0.04 }}
       className="h-full"
     >
-      <Card className="h-full p-5 transition hover:-translate-y-1 hover:shadow-glow sm:p-6">
+      <Card className="h-full p-5 sm:p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">{project.category}</p>
@@ -58,7 +58,7 @@ export function CompactProjectCard({ project, index }: CompactProjectCardProps) 
               href={link.href}
               target="_blank"
               rel="noreferrer"
-              className="text-slate-100 transition hover:text-cyan-200"
+              className="hover-link text-slate-100"
             >
               {link.label}
             </a>
@@ -68,4 +68,3 @@ export function CompactProjectCard({ project, index }: CompactProjectCardProps) 
     </motion.div>
   );
 }
-

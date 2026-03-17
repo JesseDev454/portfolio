@@ -3,7 +3,7 @@ import { Card } from '../../components/ui/Card';
 import { Section } from '../../components/ui/Section';
 import { SectionHeading } from '../../components/ui/SectionHeading';
 import { aboutContent } from '../../data/site';
-import { fadeInUp } from '../../lib/motion';
+import { fadeInUp, revealViewport } from '../../lib/motion';
 
 export function AboutSection() {
   return (
@@ -26,7 +26,7 @@ export function AboutSection() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={revealViewport}
           variants={fadeInUp}
         >
           <Card className="p-6 sm:p-7">
@@ -37,7 +37,7 @@ export function AboutSection() {
               {aboutContent.highlights.map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm leading-7 text-slate-200 transition hover:border-cyan-400/25"
+                  className="interactive-surface rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm leading-7 text-slate-200"
                 >
                   {item}
                 </div>

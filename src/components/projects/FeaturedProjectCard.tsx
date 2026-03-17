@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Card } from '../ui/Card';
-import { fadeInUp } from '../../lib/motion';
+import { fadeInUp, revealViewport } from '../../lib/motion';
 
 type FeaturedProjectCardProps = {
   project: {
@@ -22,14 +22,14 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.18 }}
+      viewport={revealViewport}
       variants={fadeInUp}
       transition={{ delay: index * 0.06 }}
       className="h-full"
     >
-      <Card className="group h-full overflow-hidden p-0 transition hover:-translate-y-1 hover:shadow-glow">
+      <Card className="group h-full overflow-hidden p-0">
         <div className="border-b border-white/10 p-6 sm:p-7">
-          <div className="rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(34,211,238,0.12),rgba(255,255,255,0.03))] p-5">
+          <div className="rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(34,211,238,0.14),rgba(255,255,255,0.03))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
             <div className="flex items-center gap-2">
               <span className="h-2.5 w-2.5 rounded-full bg-cyan-300/90" />
               <span className="h-2.5 w-2.5 rounded-full bg-blue-400/75" />
@@ -70,9 +70,10 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-slate-100 transition hover:text-cyan-200"
+                className="hover-link relative inline-flex items-center gap-2 text-slate-100"
               >
                 {link.label}
+                <span aria-hidden="true">/</span>
               </a>
             ))}
           </div>
@@ -81,4 +82,3 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
     </motion.div>
   );
 }
-

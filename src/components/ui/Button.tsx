@@ -20,11 +20,13 @@ type NativeButtonProps = SharedProps &
 type ButtonProps = AnchorProps | NativeButtonProps;
 
 const baseClassName =
-  'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950';
+  'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 active:translate-y-px';
 
 const variants = {
-  primary: 'bg-cyan-400 text-slate-950 hover:bg-cyan-300',
-  secondary: 'border border-white/10 bg-white/5 text-slate-100 hover:border-cyan-400/40 hover:bg-white/10',
+  primary:
+    'bg-cyan-400 text-slate-950 shadow-[0_12px_30px_rgba(34,211,238,0.16)] hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_18px_40px_rgba(34,211,238,0.22)]',
+  secondary:
+    'border border-white/10 bg-white/5 text-slate-100 hover:-translate-y-0.5 hover:border-cyan-400/40 hover:bg-white/10',
   ghost: 'text-slate-200 hover:bg-white/5 hover:text-cyan-200',
 } as const;
 
