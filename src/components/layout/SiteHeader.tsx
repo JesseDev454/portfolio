@@ -58,7 +58,7 @@ export function SiteHeader() {
           <a
             href={siteConfig.githubUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
             aria-label="GitHub"
             className="interactive-surface flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200"
           >
@@ -95,10 +95,10 @@ export function SiteHeader() {
         <Container className="relative z-50">
           <div
             id="mobile-navigation"
-              className={cn(
-                'surface tech-outline absolute inset-x-6 top-3 rounded-3xl p-4 shadow-glow transition duration-200 sm:inset-x-8',
-                isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0',
-              )}
+            className={cn(
+              'surface tech-outline absolute inset-x-6 top-3 rounded-3xl p-4 shadow-glow transition duration-200 sm:inset-x-8',
+              isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0',
+            )}
           >
             <nav aria-label="Mobile Primary" className="flex flex-col gap-2">
               {siteConfig.nav.map((item) => (
@@ -124,7 +124,7 @@ export function SiteHeader() {
               <a
                 href={siteConfig.githubUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 className="interactive-surface flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-950/60 text-slate-100"
                 aria-label="GitHub"
               >

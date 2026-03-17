@@ -21,12 +21,14 @@ export function ContactSection() {
           <Card className="p-6 sm:p-7">
             <div className="rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(34,211,238,0.08),rgba(255,255,255,0.03))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">{contactContent.primaryLabel}</p>
-              <a
-                href={contactContent.primaryHref}
-                className="mt-4 inline-block font-display text-3xl font-bold tracking-tight text-white transition hover:text-cyan-200 sm:text-4xl"
-              >
-                {contactContent.primaryValue}
-              </a>
+              <address className="mt-4 not-italic">
+                <a
+                  href={contactContent.primaryHref}
+                  className="inline-block font-display text-3xl font-bold tracking-tight text-white transition hover:text-cyan-200 sm:text-4xl"
+                >
+                  {contactContent.primaryValue}
+                </a>
+              </address>
             </div>
 
             <p className="mt-6 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">{contactContent.secondaryLabel}</p>
@@ -34,7 +36,7 @@ export function ContactSection() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href={contactContent.primaryHref}>Start an Email</Button>
-              <Button href={siteConfig.githubUrl} target="_blank" rel="noreferrer" variant="secondary">
+              <Button href={siteConfig.githubUrl} target="_blank" variant="secondary">
                 GitHub Profile
               </Button>
             </div>
@@ -45,7 +47,8 @@ export function ContactSection() {
                   key={link.label}
                   href={link.href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
+                  aria-label={`${link.label} profile`}
                   className="interactive-surface inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-100"
                 >
                   <SocialIcon label={link.label} className="h-4 w-4" />

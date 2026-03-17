@@ -69,7 +69,8 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
                 key={link.label}
                 href={link.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
+                aria-label={`${link.label} for ${project.name}`}
                 className="hover-link relative inline-flex items-center gap-2 text-slate-100"
               >
                 {link.label}

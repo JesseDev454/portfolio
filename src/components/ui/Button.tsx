@@ -35,9 +35,11 @@ export function Button(props: ButtonProps) {
   const composedClassName = cn(baseClassName, variants[variant], className);
 
   if (typeof props.href === 'string') {
-    const { href, children: _children, className: _className, variant: _variant, ...anchorProps } = props;
+    const { href, children: _children, className: _className, variant: _variant, rel, ...anchorProps } = props;
+    const computedRel = anchorProps.target === '_blank' ? (rel ?? 'noreferrer noopener') : rel;
+
     return (
-      <a href={href} className={composedClassName} {...anchorProps}>
+      <a href={href} className={composedClassName} {...anchorProps} rel={computedRel}>
         {children}
       </a>
     );

@@ -50,7 +50,8 @@ export function HomeSection() {
                 key={link.label}
                 href={link.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
+                aria-label={`${link.label} profile`}
                 className="interactive-surface inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-100"
               >
                 <SocialIcon label={link.label} className="h-4 w-4" />
@@ -75,6 +76,10 @@ export function HomeSection() {
               <img
                 src={heroContent.portrait.src}
                 alt={heroContent.portrait.alt}
+                width="720"
+                height="860"
+                fetchPriority="high"
+                decoding="async"
                 className="aspect-[0.84] w-full scale-[1.01] object-cover"
               />
             </div>

@@ -38,7 +38,7 @@ export const heroContent = {
   ],
   portrait: {
     src: portraitPlaceholder,
-    alt: 'Temporary portrait placeholder for Jesse until the final photo is added.',
+    alt: 'Portrait illustration representing Jesse.',
   },
 } as const;
 

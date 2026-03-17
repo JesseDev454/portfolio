@@ -57,7 +57,8 @@ export function CompactProjectCard({ project, index }: CompactProjectCardProps) 
               key={link.label}
               href={link.href}
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
+              aria-label={`${link.label} for ${project.name}`}
               className="hover-link text-slate-100"
             >
               {link.label}
