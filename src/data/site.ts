@@ -59,16 +59,36 @@ export const aboutContent = {
   ],
 } as const;
 
+export const skillsContent = {
+  eyebrow: 'My Skills',
+  title: 'A focused stack for modern product development.',
+  description:
+    'I work across the interface, API, and persistence layers with tools that support clean implementation, maintainable systems, and practical delivery.',
+  groups: [
+    {
+      title: 'Frontend',
+      summary: 'Modern UI foundations for fast, maintainable product interfaces.',
+      items: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    },
+    {
+      title: 'Backend',
+      summary: 'Service and API tools for building dependable application logic.',
+      items: ['Node.js', 'Express', 'REST APIs', 'Authentication'],
+    },
+    {
+      title: 'Databases',
+      summary: 'Relational data tooling for structured backend systems.',
+      items: ['MySQL', 'PostgreSQL', 'TypeORM'],
+    },
+    {
+      title: 'Tools / Workflow',
+      summary: 'Everyday tooling that supports clean collaboration and shipping.',
+      items: ['Git', 'GitHub', 'Postman', 'Docker'],
+    },
+  ],
+} as const;
+
 export const placeholderSections = [
-  {
-    id: 'skills',
-    eyebrow: 'Skills',
-    title: 'The structure is ready for a modern, non-gimmicky skills presentation.',
-    description:
-      'This placeholder keeps the page rhythm complete while leaving space for a cleaner skills system in the next sprint.',
-    accent: 'Structured technical capabilities',
-    points: ['Frontend stack group', 'Backend and infra group', 'Tools and workflow group'],
-  },
   {
     id: 'projects',
     eyebrow: 'Projects',
@@ -88,3 +108,4 @@ export const placeholderSections = [
     points: ['Primary email action', 'Professional social links', 'Clear response expectations'],
   },
 ] as const;
+
