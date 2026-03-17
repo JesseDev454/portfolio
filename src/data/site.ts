@@ -42,16 +42,24 @@ export const heroContent = {
   },
 } as const;
 
+export const aboutContent = {
+  eyebrow: 'About',
+  title: 'I build software that is clear to use, reliable to run, and clean to maintain.',
+  paragraphs: [
+    'I work across backend systems, APIs, polished frontend interfaces, and practical full-stack products. My focus is building software that solves real problems without sacrificing clarity, maintainability, or user experience.',
+    'That means thinking carefully about architecture, service boundaries, and implementation details while still caring about how the product feels in the hands of the people using it. I value systems that are dependable under pressure and interfaces that feel intentional instead of improvised.',
+    'Whether I am shaping a backend workflow, designing an API, or refining a frontend experience, I aim for software that is practical, well-structured, and ready to grow with the product.',
+  ],
+  highlightsTitle: 'How I approach building',
+  highlights: [
+    'Clean architecture over unnecessary complexity',
+    'Practical full-stack products with real delivery value',
+    'Reliable backend systems and clear API design',
+    'Thoughtful UI that supports the product, not distracts from it',
+  ],
+} as const;
+
 export const placeholderSections = [
-  {
-    id: 'about',
-    eyebrow: 'About',
-    title: 'This section is reserved for your positioning, experience, and value.',
-    description:
-      'The shell is ready for strong professional copy about how you work, what you build, and the kind of software problems you solve.',
-    accent: 'Clear developer positioning',
-    points: ['Professional summary area', 'Personal intro block', 'Role and collaboration context'],
-  },
   {
     id: 'skills',
     eyebrow: 'Skills',
@@ -80,4 +88,3 @@ export const placeholderSections = [
     points: ['Primary email action', 'Professional social links', 'Clear response expectations'],
   },
 ] as const;
-
