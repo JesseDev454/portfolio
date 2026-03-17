@@ -202,15 +202,14 @@ export const otherProjectsContent = {
   ],
 } as const;
 
-export const placeholderSections = [
-  {
-    id: 'contact',
-    eyebrow: 'Contact',
-    title: 'The contact destination is ready for a direct conversion-focused handoff.',
-    description:
-      'Email-first contact strategy and supporting social links will slot into this section cleanly in a later sprint.',
-    accent: 'Direct outreach flow',
-    points: ['Primary email action', 'Professional social links', 'Clear response expectations'],
-  },
-] as const;
-
+export const contactContent = {
+  eyebrow: 'Contact Me',
+  title: 'Have a project, role, or collaboration in mind?',
+  description:
+    'The fastest way to reach me is by email. If you need a developer who can work across backend systems, full-stack products, APIs, and polished interfaces, I am open to the conversation.',
+  primaryLabel: 'Email',
+  primaryValue: 'goodluckkassa6@gmail.com',
+  primaryHref: 'mailto:goodluckkassa6@gmail.com',
+  secondaryLabel: 'Best For',
+  secondaryValue: 'Project inquiries, freelance work, collaboration, and product-focused engineering roles',
+} as const;
