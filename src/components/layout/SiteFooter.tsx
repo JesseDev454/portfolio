@@ -1,14 +1,31 @@
 import { siteConfig } from '../../data/site';
 import { Container } from './Container';
+import { SocialIcon } from '../ui/SocialIcon';
 
 export function SiteFooter() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-white/5 py-8">
-      <Container className="flex flex-col gap-3 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="border-t border-white/10 py-8 sm:py-10">
+      <Container className="flex flex-col gap-6 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between">
         <p>
-          {siteConfig.name} | {siteConfig.role}
+          {siteConfig.name} | {year}
         </p>
-        <p>Foundation sprint built with React, TypeScript, Vite, Tailwind CSS, and Framer Motion.</p>
+
+        <div className="flex flex-wrap items-center gap-3">
+          {siteConfig.socialLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-slate-200 transition hover:border-cyan-400/35 hover:text-cyan-200"
+            >
+              <SocialIcon label={link.label} className="h-4 w-4" />
+              {link.label}
+            </a>
+          ))}
+        </div>
       </Container>
     </footer>
   );

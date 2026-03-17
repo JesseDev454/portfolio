@@ -1,14 +1,17 @@
 import { SiteShell } from '../components/layout/SiteShell';
-import { FoundationIntro } from '../sections/home/FoundationIntro';
-import { FoundationReadiness } from '../sections/home/FoundationReadiness';
-import { PrimitiveShowcase } from '../sections/home/PrimitiveShowcase';
+import { HomeSection } from '../sections/site/HomeSection';
+import { PlaceholderSection } from '../sections/site/PlaceholderSection';
+import { placeholderSections } from '../data/site';
 
 export function HomePage() {
+  const [homeSection, ...contentSections] = placeholderSections;
+
   return (
     <SiteShell>
-      <FoundationIntro />
-      <PrimitiveShowcase />
-      <FoundationReadiness />
+      <HomeSection section={homeSection} />
+      {contentSections.map((section) => (
+        <PlaceholderSection key={section.id} section={section} />
+      ))}
     </SiteShell>
   );
 }

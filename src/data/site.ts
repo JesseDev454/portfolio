@@ -2,73 +2,65 @@ export const siteConfig = {
   name: 'Jesse',
   role: 'Software Developer',
   email: 'goodluckkassa6@gmail.com',
-  status: 'Sprint 0 foundation in progress',
+  githubUrl: 'https://github.com/JesseDev454',
   nav: [
-    { label: 'Foundation', href: '#foundation' },
-    { label: 'Primitives', href: '#primitives' },
-    { label: 'Readiness', href: '#readiness' },
+    { label: 'Home', href: '#home', id: 'home' },
+    { label: 'About', href: '#about', id: 'about' },
+    { label: 'Skills', href: '#skills', id: 'skills' },
+    { label: 'Projects', href: '#projects', id: 'projects' },
+    { label: 'Contact', href: '#contact', id: 'contact' },
+  ],
+  socialLinks: [
+    { label: 'GitHub', href: 'https://github.com/JesseDev454' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-linkedin-handle' },
+    { label: 'Facebook', href: 'https://www.facebook.com/your-facebook-handle' },
   ],
 } as const;
 
-export const foundationHighlights = [
+export const placeholderSections = [
   {
-    title: 'Dark product shell',
-    description: 'A mature visual baseline with restrained glow, layered surfaces, and grid texture.',
+    id: 'home',
+    eyebrow: 'Home',
+    title: 'A polished portfolio shell is in place and ready for real content.',
+    description:
+      'Sprint 1 focuses on structure: navigation, responsive layout behavior, anchored sections, and a premium shell that already feels intentional.',
+    accent: 'Navigation-first experience',
+    points: ['Sticky responsive header', 'Active section highlighting', 'Refined section spacing'],
   },
   {
-    title: 'Reusable primitives',
-    description: 'Core UI building blocks that keep future sections consistent and easy to scale.',
+    id: 'about',
+    eyebrow: 'About',
+    title: 'This section is reserved for your positioning, experience, and value.',
+    description:
+      'The anchor and layout are ready so the next sprint can introduce strong professional copy without reworking the shell.',
+    accent: 'Clear developer positioning',
+    points: ['Professional summary area', 'Personal intro block', 'Role and collaboration context'],
   },
   {
-    title: 'Responsive structure',
-    description: 'Layouts, spacing, and cards tuned to feel polished across mobile and desktop.',
-  },
-] as const;
-
-export const designPillars = [
-  {
-    eyebrow: 'Layout',
-    title: 'A flexible section system with clean vertical rhythm.',
-    body: 'Container widths, section spacing, sticky navigation, and card density are set up now so later sprints can focus on real portfolio content.',
+    id: 'skills',
+    eyebrow: 'Skills',
+    title: 'The structure is ready for a modern, non-gimmicky skills presentation.',
+    description:
+      'This placeholder keeps the navigation and page rhythm complete while leaving room for a cleaner skills system in a later sprint.',
+    accent: 'Structured technical capabilities',
+    points: ['Frontend stack group', 'Backend and infra group', 'Tools and workflow group'],
   },
   {
-    eyebrow: 'Visual Language',
-    title: 'Modern SaaS-inspired UI with restrained depth.',
-    body: 'The interface uses soft borders, muted gradients, glass panels, and subtle light treatment instead of loud neon or gamer styling.',
+    id: 'projects',
+    eyebrow: 'Projects',
+    title: 'Project anchors are prepared for case-study style portfolio content.',
+    description:
+      'This area will later showcase full-stack, backend, frontend, and mobile work with clear links and stronger proof of execution.',
+    accent: 'Proof through shipped work',
+    points: ['Featured builds', 'Live demo links', 'Backend repo references'],
   },
   {
-    eyebrow: 'Scalability',
-    title: 'Shared tokens and components instead of one-off layouts.',
-    body: 'The project structure is organized to support modular sections, reusable primitives, and production-style growth sprint by sprint.',
+    id: 'contact',
+    eyebrow: 'Contact',
+    title: 'The contact destination is placed and ready for direct conversion.',
+    description:
+      'Email-first contact strategy and supporting social links will slot into this section next without changing the navigation structure.',
+    accent: 'Direct outreach flow',
+    points: ['Primary email action', 'Professional social links', 'Clear response expectations'],
   },
-] as const;
-
-export const primitiveCards = [
-  {
-    name: 'Container',
-    detail: 'Controls content width and horizontal spacing across the app.',
-  },
-  {
-    name: 'Section',
-    detail: 'Provides consistent section spacing, anchors, and wrapper behavior.',
-  },
-  {
-    name: 'SectionHeading',
-    detail: 'Standardizes section labels, titles, and supporting text.',
-  },
-  {
-    name: 'Button',
-    detail: 'Shared interactive styles for primary and secondary calls to action.',
-  },
-  {
-    name: 'Card',
-    detail: 'Reusable elevated surface for previews, metrics, and content blocks.',
-  },
-] as const;
-
-export const readinessItems = [
-  'React, TypeScript, Vite, and Tailwind CSS configured for a scalable app foundation.',
-  'Global dark theme and spacing system established in the root stylesheet.',
-  'Motion-ready component layer available for future section reveals and interactions.',
-  'Home page placeholder already communicates a premium technical brand direction.',
 ] as const;
