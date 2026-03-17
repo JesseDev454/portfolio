@@ -139,6 +139,69 @@ export const featuredProjectsContent = {
   ],
 } as const;
 
+export const otherProjectsContent = {
+  eyebrow: 'Other Projects',
+  title: 'Additional builds across backend utilities, templates, and mobile workflow.',
+  description:
+    'These projects expand the picture of what I build: practical APIs, reusable frontend surfaces, and implementation work that supports real product scenarios.',
+  projects: [
+    {
+      name: 'URL Shortener API',
+      category: 'Backend',
+      summary:
+        'A link management service built around short-code generation, redirect handling, and a clean backend structure that can be extended with analytics and expiry rules.',
+      stack: ['Node.js', 'Express', 'MongoDB'],
+      previewLabel: 'Redirect service',
+      links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/url-shortener-api' }],
+    },
+    {
+      name: 'Image Hosting Platform',
+      category: 'Full-Stack',
+      summary:
+        'A media upload and management workflow focused on structured file handling, user-facing upload experience, and backend organization for hosted assets.',
+      stack: ['React', 'Node.js', 'Cloud Storage'],
+      previewLabel: 'Media workflow',
+      links: [
+        { label: 'Live Demo', href: 'https://image-hosting-platform-demo.vercel.app' },
+        { label: 'GitHub', href: 'https://github.com/JesseDev454/image-hosting-platform' },
+      ],
+    },
+    {
+      name: 'Business Website Template',
+      category: 'Frontend',
+      summary:
+        'A polished business-facing web template built to showcase clean layout hierarchy, responsive marketing structure, and a refined conversion-oriented presentation.',
+      stack: ['React', 'TypeScript', 'Tailwind CSS'],
+      previewLabel: 'Marketing site',
+      links: [
+        { label: 'Live Demo', href: 'https://business-website-template-demo.vercel.app' },
+        { label: 'GitHub', href: 'https://github.com/JesseDev454/business-website-template' },
+      ],
+    },
+    {
+      name: 'Dashboard Template',
+      category: 'Frontend',
+      summary:
+        'A reusable admin-style interface that demonstrates data-dense layout handling, UI consistency, and scalable component structure for dashboard products.',
+      stack: ['React', 'TypeScript', 'Tailwind CSS'],
+      previewLabel: 'Admin interface',
+      links: [
+        { label: 'Live Demo', href: 'https://dashboard-template-demo.vercel.app' },
+        { label: 'GitHub', href: 'https://github.com/JesseDev454/dashboard-template' },
+      ],
+    },
+    {
+      name: 'QR Attendance Android App',
+      category: 'Android',
+      summary:
+        'A QR-based attendance workflow for fast session check-ins, practical mobile scanning, and lightweight operational tracking in an Android-first experience.',
+      stack: ['Kotlin', 'Android', 'QR Scanning'],
+      previewLabel: 'Mobile check-in',
+      links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/qr-attendance-android-app' }],
+    },
+  ],
+} as const;
+
 export const placeholderSections = [
   {
     id: 'contact',
