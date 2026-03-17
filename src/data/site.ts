@@ -1,3 +1,5 @@
+import portraitPlaceholder from '../assets/portrait-placeholder.svg';
+
 export const siteConfig = {
   name: 'Jesse',
   role: 'Software Developer',
@@ -17,22 +19,36 @@ export const siteConfig = {
   ],
 } as const;
 
-export const placeholderSections = [
-  {
-    id: 'home',
-    eyebrow: 'Home',
-    title: 'A polished portfolio shell is in place and ready for real content.',
-    description:
-      'Sprint 1 focuses on structure: navigation, responsive layout behavior, anchored sections, and a premium shell that already feels intentional.',
-    accent: 'Navigation-first experience',
-    points: ['Sticky responsive header', 'Active section highlighting', 'Refined section spacing'],
+export const heroContent = {
+  eyebrow: 'Software Developer',
+  title: 'Jesse',
+  subtitle: 'Frontend systems, backend APIs, and full-stack products built with precision.',
+  description:
+    'I build modern web products with polished interfaces, reliable backend architecture, and technical decisions that hold up beyond the first release.',
+  primaryCta: { label: 'View Projects', href: '#projects' },
+  secondaryCta: { label: 'Contact Me', href: '#contact' },
+  highlights: [
+    'React and TypeScript interfaces',
+    'Backend services and API design',
+    'Full-stack product delivery',
+  ],
+  stats: [
+    { label: 'Focus', value: 'Frontend, backend, and product execution' },
+    { label: 'Approach', value: 'Clean architecture, strong UX, and scalable implementation' },
+  ],
+  portrait: {
+    src: portraitPlaceholder,
+    alt: 'Temporary portrait placeholder for Jesse until the final photo is added.',
   },
+} as const;
+
+export const placeholderSections = [
   {
     id: 'about',
     eyebrow: 'About',
     title: 'This section is reserved for your positioning, experience, and value.',
     description:
-      'The anchor and layout are ready so the next sprint can introduce strong professional copy without reworking the shell.',
+      'The shell is ready for strong professional copy about how you work, what you build, and the kind of software problems you solve.',
     accent: 'Clear developer positioning',
     points: ['Professional summary area', 'Personal intro block', 'Role and collaboration context'],
   },
@@ -41,26 +57,27 @@ export const placeholderSections = [
     eyebrow: 'Skills',
     title: 'The structure is ready for a modern, non-gimmicky skills presentation.',
     description:
-      'This placeholder keeps the navigation and page rhythm complete while leaving room for a cleaner skills system in a later sprint.',
+      'This placeholder keeps the page rhythm complete while leaving space for a cleaner skills system in the next sprint.',
     accent: 'Structured technical capabilities',
     points: ['Frontend stack group', 'Backend and infra group', 'Tools and workflow group'],
   },
   {
     id: 'projects',
     eyebrow: 'Projects',
-    title: 'Project anchors are prepared for case-study style portfolio content.',
+    title: 'Project anchors are prepared for proof-driven portfolio content.',
     description:
-      'This area will later showcase full-stack, backend, frontend, and mobile work with clear links and stronger proof of execution.',
+      'This section will soon showcase full-stack products, backend APIs, frontend builds, and live demos in a stronger case-study format.',
     accent: 'Proof through shipped work',
     points: ['Featured builds', 'Live demo links', 'Backend repo references'],
   },
   {
     id: 'contact',
     eyebrow: 'Contact',
-    title: 'The contact destination is placed and ready for direct conversion.',
+    title: 'The contact destination is ready for a direct conversion-focused handoff.',
     description:
-      'Email-first contact strategy and supporting social links will slot into this section next without changing the navigation structure.',
+      'Email-first contact strategy and supporting social links will slot into this section cleanly in a later sprint.',
     accent: 'Direct outreach flow',
     points: ['Primary email action', 'Professional social links', 'Clear response expectations'],
   },
 ] as const;
+

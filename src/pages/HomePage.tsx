@@ -4,15 +4,12 @@ import { PlaceholderSection } from '../sections/site/PlaceholderSection';
 import { placeholderSections } from '../data/site';
 
 export function HomePage() {
-  const [homeSection, ...contentSections] = placeholderSections;
-
   return (
     <SiteShell>
-      <HomeSection section={homeSection} />
-      {contentSections.map((section) => (
+      <HomeSection />
+      {placeholderSections.map((section) => (
         <PlaceholderSection key={section.id} section={section} />
       ))}
     </SiteShell>
   );
 }
-
