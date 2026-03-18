@@ -32,12 +32,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/64 shadow-[0_12px_38px_rgba(2,6,23,0.26)] backdrop-blur-2xl">
-      <Container className="flex items-center justify-between gap-4 py-4">
-        <a href="#home" className="group inline-flex items-center gap-3 text-slate-50">
-          <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-cyan-400/16 bg-[linear-gradient(180deg,rgba(103,232,249,0.18),rgba(255,255,255,0.02))] text-sm font-bold tracking-[0.04em] text-cyan-100 shadow-[0_12px_30px_rgba(8,145,178,0.12)] transition duration-200 group-hover:border-cyan-300/28 group-hover:text-white">
+      <Container className="flex items-center justify-between gap-3 py-3 sm:gap-4 sm:py-4">
+        <a href="#home" className="group inline-flex min-w-0 items-center gap-2.5 text-slate-50 sm:gap-3">
+          <span className="flex h-8 w-8 flex-none items-center justify-center rounded-[1rem] border border-cyan-400/16 bg-[linear-gradient(180deg,rgba(103,232,249,0.18),rgba(255,255,255,0.02))] text-[0.72rem] font-bold tracking-[0.04em] text-cyan-100 shadow-[0_12px_30px_rgba(8,145,178,0.12)] transition duration-200 group-hover:border-cyan-300/28 group-hover:text-white sm:h-9 sm:w-9 sm:rounded-2xl sm:text-sm">
             GK
           </span>
-          <span className="font-display text-lg font-bold tracking-tight">{siteConfig.name}</span>
+          <span className="truncate font-display text-[0.98rem] font-bold tracking-tight sm:text-lg">{siteConfig.name}</span>
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] md:flex">
@@ -76,7 +76,7 @@ export function SiteHeader() {
           aria-controls="mobile-navigation"
           aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           onClick={() => setIsMenuOpen((value) => !value)}
-          className="interactive-surface flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-slate-100 md:hidden"
+          className="interactive-surface flex h-10 w-10 flex-none items-center justify-center rounded-[1rem] border border-white/10 bg-white/[0.04] text-slate-100 md:hidden"
         >
           {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
@@ -90,7 +90,7 @@ export function SiteHeader() {
       >
         <div
           className={cn(
-            'fixed inset-0 z-40 bg-slate-950/70 transition-opacity duration-200',
+            'fixed inset-0 z-40 bg-slate-950/60 transition-opacity duration-200',
             isMenuOpen ? 'opacity-100' : 'opacity-0',
           )}
           onClick={() => setIsMenuOpen(false)}
@@ -100,11 +100,11 @@ export function SiteHeader() {
           <div
             id="mobile-navigation"
             className={cn(
-              'surface tech-outline absolute inset-x-6 top-3 rounded-[1.75rem] p-4 shadow-glow transition duration-200 sm:inset-x-8',
+              'surface tech-outline absolute right-0 top-2 w-full max-w-[19.5rem] rounded-[1.4rem] p-3.5 shadow-glow transition duration-200',
               isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0',
             )}
           >
-            <nav aria-label="Mobile Primary" className="flex flex-col gap-2">
+            <nav aria-label="Mobile Primary" className="flex flex-col gap-1.5">
               {siteConfig.nav.map((item) => (
                 <a
                   key={item.href}
@@ -112,7 +112,7 @@ export function SiteHeader() {
                   aria-current={activeSection === item.id ? 'page' : undefined}
                   onClick={() => setIsMenuOpen(false)}
                   className={cn(
-                    'rounded-2xl px-4 py-3 text-sm font-medium transition duration-200',
+                    'rounded-[1rem] px-3.5 py-2.5 text-sm font-medium transition duration-200',
                     activeSection === item.id
                       ? 'bg-[linear-gradient(180deg,rgba(103,232,249,0.14),rgba(255,255,255,0.04))] text-cyan-100'
                       : 'text-slate-200 hover:bg-white/5 hover:text-white',
@@ -123,16 +123,16 @@ export function SiteHeader() {
               ))}
             </nav>
 
-            <div className="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
-              <span className="text-sm text-slate-300">GitHub</span>
+            <div className="mt-3 flex items-center justify-between rounded-[1rem] border border-white/10 bg-white/[0.04] px-3.5 py-2.5">
+              <span className="text-[0.82rem] font-medium text-slate-300">GitHub</span>
               <a
                 href={siteConfig.githubUrl}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="interactive-surface flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/60 text-slate-100"
+                className="interactive-surface flex h-9 w-9 items-center justify-center rounded-[0.9rem] border border-white/10 bg-slate-950/60 text-slate-100"
                 aria-label="GitHub"
               >
-                <SocialIcon label="GitHub" className="h-5 w-5" />
+                <SocialIcon label="GitHub" className="h-4.5 w-4.5" />
               </a>
             </div>
           </div>
