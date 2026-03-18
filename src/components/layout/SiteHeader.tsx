@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { siteConfig } from '../../data/site';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { cn } from '../../lib/cn';
@@ -7,6 +7,7 @@ import { SocialIcon } from '../ui/SocialIcon';
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
   const navSectionIds = useMemo(() => siteConfig.nav.map((item) => item.id), []);
   const activeSection = useActiveSection(navSectionIds);
 
@@ -23,15 +24,33 @@ export function SiteHeader() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    if (!isMenuOpen) {
+      return;
+    }
+
+    const closeOnOutsidePointer = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const closeOnResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('pointerdown', closeOnOutsidePointer);
+    window.addEventListener('resize', closeOnResize);
 
     return () => {
-      document.body.style.overflow = '';
+      window.removeEventListener('pointerdown', closeOnOutsidePointer);
+      window.removeEventListener('resize', closeOnResize);
     };
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/64 shadow-[0_12px_38px_rgba(2,6,23,0.26)] backdrop-blur-2xl">
+    <header ref={headerRef} className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/64 shadow-[0_12px_38px_rgba(2,6,23,0.26)] backdrop-blur-2xl">
       <Container className="flex items-center justify-between gap-3 py-3 sm:gap-4 sm:py-4">
         <a href="#home" className="group inline-flex min-w-0 items-center gap-2.5 text-slate-50 sm:gap-3">
           <span className="flex h-8 w-8 flex-none items-center justify-center rounded-[1rem] border border-cyan-400/16 bg-[linear-gradient(180deg,rgba(103,232,249,0.18),rgba(255,255,255,0.02))] text-[0.72rem] font-bold tracking-[0.04em] text-cyan-100 shadow-[0_12px_30px_rgba(8,145,178,0.12)] transition duration-200 group-hover:border-cyan-300/28 group-hover:text-white sm:h-9 sm:w-9 sm:rounded-2xl sm:text-sm">
@@ -82,62 +101,35 @@ export function SiteHeader() {
         </button>
       </Container>
 
-      <div
-        className={cn(
-          'md:hidden',
-          isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none',
-        )}
-      >
-        <div
-          className={cn(
-            'fixed inset-0 z-40 bg-slate-950/60 transition-opacity duration-200',
-            isMenuOpen ? 'opacity-100' : 'opacity-0',
-          )}
-          onClick={() => setIsMenuOpen(false)}
-          aria-hidden="true"
-        />
-        <Container className="relative z-50">
-          <div
-            id="mobile-navigation"
-            className={cn(
-              'surface tech-outline absolute right-0 top-2 w-full max-w-[19.5rem] rounded-[1.4rem] p-3.5 shadow-glow transition duration-200',
-              isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0',
-            )}
-          >
-            <nav aria-label="Mobile Primary" className="flex flex-col gap-1.5">
-              {siteConfig.nav.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  aria-current={activeSection === item.id ? 'page' : undefined}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={cn(
-                    'rounded-[1rem] px-3.5 py-2.5 text-sm font-medium transition duration-200',
-                    activeSection === item.id
-                      ? 'bg-[linear-gradient(180deg,rgba(103,232,249,0.14),rgba(255,255,255,0.04))] text-cyan-100'
-                      : 'text-slate-200 hover:bg-white/5 hover:text-white',
-                  )}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-
-            <div className="mt-3 flex items-center justify-between rounded-[1rem] border border-white/10 bg-white/[0.04] px-3.5 py-2.5">
-              <span className="text-[0.82rem] font-medium text-slate-300">GitHub</span>
-              <a
-                href={siteConfig.githubUrl}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="interactive-surface flex h-9 w-9 items-center justify-center rounded-[0.9rem] border border-white/10 bg-slate-950/60 text-slate-100"
-                aria-label="GitHub"
-              >
-                <SocialIcon label="GitHub" className="h-4.5 w-4.5" />
-              </a>
+      {isMenuOpen ? (
+        <div className="absolute inset-x-0 top-full z-50 md:hidden">
+          <Container className="relative">
+            <div
+              id="mobile-navigation"
+              className="surface tech-outline absolute right-0 top-2 w-full max-w-[17.5rem] rounded-[1.3rem] p-3 shadow-glow"
+            >
+              <nav aria-label="Mobile Primary" className="flex flex-col gap-1">
+                {siteConfig.nav.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    aria-current={activeSection === item.id ? 'page' : undefined}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={cn(
+                      'rounded-[0.95rem] px-3 py-2.5 text-[0.94rem] font-medium transition duration-200',
+                      activeSection === item.id
+                        ? 'bg-[linear-gradient(180deg,rgba(103,232,249,0.14),rgba(255,255,255,0.04))] text-cyan-100'
+                        : 'text-slate-200 hover:bg-white/5 hover:text-white',
+                    )}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
             </div>
-          </div>
-        </Container>
-      </div>
+          </Container>
+        </div>
+      ) : null}
     </header>
   );
 }
