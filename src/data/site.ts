@@ -1,8 +1,8 @@
-import portraitPlaceholder from '../assets/portrait-placeholder.svg';
+import profilePicture from '../../profile-pic.jpeg';
 
 export const siteConfig = {
-  name: 'Jesse',
-  role: 'Software Developer',
+  name: 'Goodluck Kassa',
+  role: 'Fullstack Developer',
   email: 'goodluckkassa6@gmail.com',
   githubUrl: 'https://github.com/JesseDev454',
   nav: [
@@ -14,17 +14,17 @@ export const siteConfig = {
   ],
   socialLinks: [
     { label: 'GitHub', href: 'https://github.com/JesseDev454' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-linkedin-handle' },
-    { label: 'Facebook', href: 'https://www.facebook.com/your-facebook-handle' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/goodluck-kassa-a4a43a331/' },
+    { label: 'Facebook', href: 'https://www.facebook.com/share/1a6z2rWgA2/' },
   ],
 } as const;
 
 export const heroContent = {
-  eyebrow: 'Software Developer',
-  title: 'Jesse',
-  subtitle: 'Full-stack products, backend systems, and polished frontend work.',
+  intro: 'Hello, I am',
+  title: 'Goodluck Kassa',
+  subtitle: 'Fullstack Developer',
   description:
-    'I build web products with reliable APIs, clean architecture, and interfaces that feel clear, fast, and production-ready.',
+    'I build full-stack products with reliable APIs, scalable backend systems, and polished interfaces that feel fast, clear, and production-ready.',
   primaryCta: { label: 'View Projects', href: '#projects' },
   secondaryCta: { label: 'Contact Me', href: '#contact' },
   highlights: [
@@ -37,8 +37,8 @@ export const heroContent = {
     { label: 'Approach', value: 'Clear architecture, reliable delivery, and polished execution' },
   ],
   portrait: {
-    src: portraitPlaceholder,
-    alt: 'Portrait illustration representing Jesse.',
+    src: profilePicture,
+    alt: 'Profile picture of Goodluck Kassa',
   },
 } as const;
 
@@ -99,11 +99,11 @@ export const featuredProjectsContent = {
       category: 'Full-Stack',
       description:
         'A full-stack delivery platform built around clear operational workflows, structured order management, and a polished interface for day-to-day product use.',
-      stack: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB'],
-      previewLabel: 'Operations dashboard',
+      stack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL'],
+      previewLabel: '',
       links: [
-        { label: 'Live Demo', href: 'https://dishpatch-demo.vercel.app' },
-        { label: 'GitHub', href: 'https://github.com/JesseDev454/dishpatch' },
+        { label: 'Live Demo', href: 'https://dishpatchhq.com/' },
+        { label: 'GitHub', href: 'https://github.com/JesseDev454/Dishpatch' },
       ],
     },
     {
@@ -112,7 +112,7 @@ export const featuredProjectsContent = {
       description:
         'A backend platform for processing domain events, coordinating asynchronous delivery, and modeling services that need reliability beyond simple request-response flows.',
       stack: ['Node.js', 'Redis', 'Queues', 'Webhooks', 'Docker'],
-      previewLabel: 'Event pipeline',
+      previewLabel: '',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/event-driven-notification-platform' }],
     },
     {
@@ -121,19 +121,19 @@ export const featuredProjectsContent = {
       description:
         'A focused authentication service covering secure account flows, token-based access, and boundaries that fit cleanly into larger product architecture.',
       stack: ['Node.js', 'Express', 'JWT', 'PostgreSQL'],
-      previewLabel: 'Auth service',
-      links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/authentication-service-api' }],
+      previewLabel: '',
+      links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/auth-api' }],
     },
     {
-      name: 'Frontend Templates',
+      name: 'SaaS Landing Page Template',
       category: 'Frontend',
       description:
-        'A collection of product-style interfaces that show responsive layout discipline, reusable UI structure, and strong frontend execution.',
+        'A product-style landing page template built to showcase structured messaging, polished conversion sections, and strong frontend execution.',
       stack: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      previewLabel: 'Product interface',
+      previewLabel: '',
       links: [
-        { label: 'Live Demo', href: 'https://frontend-templates-demo.vercel.app' },
-        { label: 'GitHub', href: 'https://github.com/JesseDev454/frontend-templates' },
+        { label: 'Live Demo', href: 'https://saas-landing-page-template-rho.vercel.app/' },
+        { label: 'GitHub', href: 'https://github.com/JesseDev454/saas-landing-page-template' },
       ],
     },
   ],
@@ -146,25 +146,13 @@ export const otherProjectsContent = {
     'More projects that expand the stack: backend utilities, frontend templates, and mobile workflows built with the same focus on clarity and execution.',
   projects: [
     {
-      name: 'URL Shortener API',
+      name: 'Image Upload Service',
       category: 'Backend',
       summary:
-        'A URL service built around short-code generation, redirect handling, and a backend structure that can support analytics and expiry rules.',
-      stack: ['Node.js', 'Express', 'MongoDB'],
-      previewLabel: 'Redirect service',
-      links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/url-shortener-api' }],
-    },
-    {
-      name: 'Image Hosting Platform',
-      category: 'Full-Stack',
-      summary:
-        'A media workflow for structured uploads, asset management, and a clean user-facing experience backed by organized file handling.',
-      stack: ['React', 'Node.js', 'Cloud Storage'],
-      previewLabel: 'Media workflow',
-      links: [
-        { label: 'Live Demo', href: 'https://image-hosting-platform-demo.vercel.app' },
-        { label: 'GitHub', href: 'https://github.com/JesseDev454/image-hosting-platform' },
-      ],
+        'A backend upload service focused on media handling, storage coordination, and structured file workflows for hosted assets.',
+      stack: ['Node.js', 'Express', 'Cloud Storage'],
+      previewLabel: 'Storage workflow',
+      links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/image-upload-service-api' }],
     },
     {
       name: 'Business Website Template',
@@ -174,30 +162,18 @@ export const otherProjectsContent = {
       stack: ['React', 'TypeScript', 'Tailwind CSS'],
       previewLabel: 'Marketing site',
       links: [
-        { label: 'Live Demo', href: 'https://business-website-template-demo.vercel.app' },
+        { label: 'Live Demo', href: 'https://business-website-template-ochre.vercel.app/' },
         { label: 'GitHub', href: 'https://github.com/JesseDev454/business-website-template' },
       ],
     },
     {
-      name: 'Dashboard Template',
-      category: 'Frontend',
+      name: 'Attendance Management System',
+      category: 'Mobile',
       summary:
-        'A reusable dashboard interface designed for data-heavy layouts, UI consistency, and scalable component structure.',
-      stack: ['React', 'TypeScript', 'Tailwind CSS'],
-      previewLabel: 'Admin interface',
-      links: [
-        { label: 'Live Demo', href: 'https://dashboard-template-demo.vercel.app' },
-        { label: 'GitHub', href: 'https://github.com/JesseDev454/dashboard-template' },
-      ],
-    },
-    {
-      name: 'QR Attendance Android App',
-      category: 'Android',
-      summary:
-        'An Android attendance workflow built around QR-based check-ins, fast scanning, and lightweight operational tracking.',
+        'A mobile attendance workflow built for structured session tracking, fast check-ins, and practical Android-first operation.',
       stack: ['Kotlin', 'Android', 'QR Scanning'],
       previewLabel: 'Mobile check-in',
-      links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/qr-attendance-android-app' }],
+      links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/Attendance-Management-System' }],
     },
   ],
 } as const;
@@ -210,6 +186,9 @@ export const contactContent = {
   primaryLabel: 'Email',
   primaryValue: 'goodluckkassa6@gmail.com',
   primaryHref: 'mailto:goodluckkassa6@gmail.com',
+  phoneLabel: 'Phone',
+  phoneValue: '(+234) 9133343147',
+  phoneHref: 'tel:+2349133343147',
   secondaryLabel: 'Best For',
   secondaryValue: 'Product work, backend services, full-stack builds, and engineering collaboration',
 } as const;

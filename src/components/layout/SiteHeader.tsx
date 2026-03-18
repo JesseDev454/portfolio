@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { siteConfig } from '../../data/site';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { cn } from '../../lib/cn';
@@ -7,7 +7,8 @@ import { SocialIcon } from '../ui/SocialIcon';
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const activeSection = useActiveSection(siteConfig.nav.map((item) => item.id));
+  const navSectionIds = useMemo(() => siteConfig.nav.map((item) => item.id), []);
+  const activeSection = useActiveSection(navSectionIds);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -33,8 +34,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/64 shadow-[0_12px_38px_rgba(2,6,23,0.26)] backdrop-blur-2xl">
       <Container className="flex items-center justify-between gap-4 py-4">
         <a href="#home" className="group inline-flex items-center gap-3 text-slate-50">
-          <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-cyan-400/16 bg-[linear-gradient(180deg,rgba(103,232,249,0.18),rgba(255,255,255,0.02))] text-sm font-bold text-cyan-100 shadow-[0_12px_30px_rgba(8,145,178,0.12)] transition duration-200 group-hover:border-cyan-300/28 group-hover:text-white">
-            J
+          <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-cyan-400/16 bg-[linear-gradient(180deg,rgba(103,232,249,0.18),rgba(255,255,255,0.02))] text-sm font-bold tracking-[0.04em] text-cyan-100 shadow-[0_12px_30px_rgba(8,145,178,0.12)] transition duration-200 group-hover:border-cyan-300/28 group-hover:text-white">
+            GK
           </span>
           <span className="font-display text-lg font-bold tracking-tight">{siteConfig.name}</span>
         </a>

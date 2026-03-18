@@ -5,12 +5,8 @@ import { otherProjectsContent } from '../../data/site';
 
 export function OtherProjectsSection() {
   return (
-    <Section className="pt-0 sm:pt-6" containerClassName="border-t border-white/5 pt-20 sm:pt-24">
-      <SectionHeading
-        eyebrow={otherProjectsContent.eyebrow}
-        title={otherProjectsContent.title}
-        description={otherProjectsContent.description}
-      />
+    <Section navId="projects" className="pt-0 sm:pt-6" containerClassName="border-t border-white/5 pt-20 sm:pt-24">
+      <SectionHeading eyebrow={otherProjectsContent.eyebrow} />
 
       <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {otherProjectsContent.projects.map((project, index) => (

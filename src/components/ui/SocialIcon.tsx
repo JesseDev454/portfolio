@@ -1,4 +1,4 @@
-type SocialLabel = 'GitHub' | 'LinkedIn' | 'Facebook';
+type SocialLabel = 'GitHub' | 'LinkedIn' | 'Facebook' | 'daily.dev';
 
 type SocialIconProps = {
   label: SocialLabel;
@@ -28,13 +28,28 @@ export function SocialIcon({ label, className }: SocialIconProps) {
     );
   }
 
+  if (label === 'Facebook') {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+        <path
+          fill="currentColor"
+          d="M13.5 21v-8h2.6l.4-3h-3v-1.9c0-.87.26-1.46 1.5-1.46h1.6V4.07c-.28-.04-1.24-.12-2.36-.12-2.34 0-3.94 1.42-3.94 4.05V10H8v3h2.3v8h3.2Z"
+        />
+      </svg>
+    );
+  }
+
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+      <rect x="4.5" y="4.5" width="15" height="15" rx="3.5" fill="none" stroke="currentColor" strokeWidth="1.7" />
       <path
-        fill="currentColor"
-        d="M13.5 21v-8h2.6l.4-3h-3v-1.9c0-.87.26-1.46 1.5-1.46h1.6V4.07c-.28-.04-1.24-.12-2.36-.12-2.34 0-3.94 1.42-3.94 4.05V10H8v3h2.3v8h3.2Z"
+        d="M8.5 12.5h3.2a2.8 2.8 0 1 0 0-5.6H8.5v9.6h5a3 3 0 0 0 0-6h-1.8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
 }
-

@@ -1,6 +1,4 @@
 import { motion } from 'framer-motion';
-import { Button } from '../../components/ui/Button';
-import { Card } from '../../components/ui/Card';
 import { Section } from '../../components/ui/Section';
 import { SectionHeading } from '../../components/ui/SectionHeading';
 import { SocialIcon } from '../../components/ui/SocialIcon';
@@ -14,31 +12,33 @@ export function ContactSection() {
         <SectionHeading
           eyebrow={contactContent.eyebrow}
           title={contactContent.title}
-          description={contactContent.description}
         />
 
         <motion.div initial="hidden" whileInView="visible" viewport={revealViewport} variants={fadeInUp}>
-          <Card className="p-6 sm:p-7">
-            <div className="rounded-[1.55rem] border border-white/10 bg-[linear-gradient(180deg,rgba(103,232,249,0.1),rgba(255,255,255,0.03))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] sm:p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">{contactContent.primaryLabel}</p>
-              <address className="mt-4 not-italic">
+          <div className="max-w-2xl">
+            <div className="space-y-4">
+              <address className="not-italic">
                 <a
                   href={contactContent.primaryHref}
-                  className="inline-block font-display text-3xl font-bold tracking-[-0.03em] text-white transition hover:text-cyan-200 sm:text-4xl"
+                  className="group inline-flex max-w-full items-center gap-4 text-left text-slate-100 transition hover:text-cyan-200"
                 >
-                  {contactContent.primaryValue}
+                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-cyan-200">
+                    <MailIcon />
+                  </span>
+                  <span className="break-all text-lg font-medium leading-7 sm:text-xl">{contactContent.primaryValue}</span>
                 </a>
               </address>
-            </div>
 
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">{contactContent.secondaryLabel}</p>
-            <p className="mt-3 max-w-2xl text-base leading-8 text-slate-300">{contactContent.secondaryValue}</p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href={contactContent.primaryHref}>Start an Email</Button>
-              <Button href={siteConfig.githubUrl} target="_blank" variant="secondary">
-                GitHub Profile
-              </Button>
+              <a
+                href={contactContent.phoneHref}
+                className="group inline-flex max-w-full items-center gap-4 text-left text-slate-100 transition hover:text-cyan-200"
+                aria-label={`Call ${contactContent.phoneValue}`}
+              >
+                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-cyan-200">
+                  <PhoneIcon />
+                </span>
+                <span className="break-words text-lg font-medium leading-7 sm:text-xl">{contactContent.phoneValue}</span>
+              </a>
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -56,9 +56,46 @@ export function ContactSection() {
                 </a>
               ))}
             </div>
-          </Card>
+          </div>
         </motion.div>
       </div>
     </Section>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M4 7.5h16v9A1.5 1.5 0 0 1 18.5 18h-13A1.5 1.5 0 0 1 4 16.5v-9Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path
+        d="m5 8 7 5 7-5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5">
+      <path
+        d="M7.7 4.5h2.07c.39 0 .74.25.87.62l.76 2.17c.11.32.04.67-.2.92l-1.36 1.49a13.74 13.74 0 0 0 4.39 4.39l1.49-1.36c.25-.23.61-.31.92-.19l2.17.75c.37.13.62.48.62.87v2.08c0 .48-.36.89-.83.94l-1.55.17c-1.48.16-2.98-.16-4.27-.92a16.76 16.76 0 0 1-5.58-5.58 7.28 7.28 0 0 1-.92-4.27l.17-1.55c.05-.47.46-.83.95-.83Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }

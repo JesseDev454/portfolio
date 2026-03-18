@@ -11,7 +11,6 @@ export function AboutSection() {
       <div className="grid gap-12 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
         <SectionHeading
           eyebrow={aboutContent.eyebrow}
-          title={aboutContent.title}
           description={
             <>
               {aboutContent.paragraphs.map((paragraph) => (
