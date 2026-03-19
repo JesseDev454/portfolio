@@ -100,11 +100,6 @@ export function HomeSection() {
                 <div className="pointer-events-none absolute inset-0 hero-portrait-grid" />
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-[linear-gradient(180deg,rgba(103,232,249,0.14),transparent)]" />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,transparent,rgba(2,6,23,0.38))]" />
-                <div className="pointer-events-none absolute left-5 right-5 top-5 z-10 flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-cyan-300/90" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-blue-400/70" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-slate-500/70" />
-                </div>
                 <div className="hero-badge absolute bottom-4 right-4 z-10 flex h-14 w-14 items-center justify-center rounded-full text-base font-semibold tracking-[0.08em] text-cyan-50 sm:bottom-6 sm:right-6 sm:h-16 sm:w-16 sm:text-lg">
                   GK
                 </div>

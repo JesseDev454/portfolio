@@ -3,7 +3,6 @@ import { siteConfig } from '../../data/site';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { cn } from '../../lib/cn';
 import { Container } from './Container';
-import { SocialIcon } from '../ui/SocialIcon';
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,18 +75,6 @@ export function SiteHeader() {
             </a>
           ))}
         </nav>
-
-        <div className="hidden items-center gap-3 md:flex">
-          <a
-            href={siteConfig.githubUrl}
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="GitHub"
-            className="interactive-surface flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-slate-200"
-          >
-            <SocialIcon label="GitHub" className="h-5 w-5" />
-          </a>
-        </div>
 
         <button
           type="button"
