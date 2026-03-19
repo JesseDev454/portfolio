@@ -3,7 +3,7 @@ import { Card } from '../../components/ui/Card';
 import { Section } from '../../components/ui/Section';
 import { SectionHeading } from '../../components/ui/SectionHeading';
 import { aboutContent } from '../../data/site';
-import { fadeInUp, revealViewport } from '../../lib/motion';
+import { revealViewport, slideInLeft, slideInRight } from '../../lib/motion';
 
 export function AboutSection() {
   return (
@@ -11,6 +11,7 @@ export function AboutSection() {
       <div className="grid gap-12 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
         <SectionHeading
           eyebrow={aboutContent.eyebrow}
+          motionVariant={slideInLeft}
           description={
             <>
               {aboutContent.paragraphs.map((paragraph) => (
@@ -26,7 +27,7 @@ export function AboutSection() {
           initial="hidden"
           whileInView="visible"
           viewport={revealViewport}
-          variants={fadeInUp}
+          variants={slideInRight}
         >
           <Card className="p-6 sm:p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">Approach</p>

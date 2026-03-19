@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Card } from '../ui/Card';
 import { SkillIcon } from '../ui/SkillIcon';
-import { fadeInUp, revealViewport } from '../../lib/motion';
+import { revealViewport, slideInLeft, slideInRight } from '../../lib/motion';
 
 type FeaturedProjectCardProps = {
   project: {
@@ -19,12 +19,14 @@ type FeaturedProjectCardProps = {
 };
 
 export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps) {
+  const revealVariant = index % 2 === 0 ? slideInLeft : slideInRight;
+
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={revealViewport}
-      variants={fadeInUp}
+      variants={revealVariant}
       transition={{ delay: index * 0.06 }}
       className="h-full"
     >

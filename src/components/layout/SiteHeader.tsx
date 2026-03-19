@@ -106,7 +106,7 @@ export function SiteHeader() {
           <Container className="relative">
             <div
               id="mobile-navigation"
-              className="surface tech-outline absolute right-0 top-2 w-full max-w-[17.5rem] rounded-[1.3rem] p-3 shadow-glow"
+              className="surface tech-outline absolute right-0 top-2 w-full max-w-[17.5rem] max-h-[min(17rem,calc(100vh-5rem))] overflow-y-auto rounded-[1.3rem] p-3 shadow-glow"
             >
               <nav aria-label="Mobile Primary" className="flex flex-col gap-1">
                 {siteConfig.nav.map((item) => (

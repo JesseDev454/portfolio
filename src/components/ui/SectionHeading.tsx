@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { fadeInUp, revealViewport } from '../../lib/motion';
 
 type SectionHeadingProps = {
@@ -7,16 +7,23 @@ type SectionHeadingProps = {
   title?: string;
   description?: ReactNode;
   align?: 'left' | 'center';
+  motionVariant?: Variants;
 };
 
-export function SectionHeading({ eyebrow, title, description, align = 'left' }: SectionHeadingProps) {
+export function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  align = 'left',
+  motionVariant = fadeInUp,
+}: SectionHeadingProps) {
   return (
     <motion.div
       className={align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-[44rem]'}
       initial="hidden"
       whileInView="visible"
       viewport={revealViewport}
-      variants={fadeInUp}
+      variants={motionVariant}
     >
       <p className="eyebrow-chip text-[11px] font-semibold uppercase tracking-[0.28em] text-cyan-100">{eyebrow}</p>
       {title ? (

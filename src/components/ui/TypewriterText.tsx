@@ -79,15 +79,17 @@ export function TypewriterText({
   }, [onComplete, shouldReduceMotion, speed, startDelay, text]);
 
   return (
-    <span className={cn('inline-flex items-end whitespace-nowrap', className)}>
+    <span className={cn('inline align-top', className)}>
       <span className="sr-only">{text}</span>
       <span aria-hidden="true">{displayedText}</span>
-      {!isComplete ? (
-        <span
-          aria-hidden="true"
-          className={cn('hero-type-cursor ml-1 inline-block h-[0.9em] w-px rounded-full bg-cyan-200/90 align-[-0.08em]', cursorClassName)}
-        />
-      ) : null}
+      <span
+        aria-hidden="true"
+        className={cn(
+          'hero-type-cursor ml-1 inline-block h-[0.88em] w-px rounded-full bg-cyan-200/85 align-[-0.08em]',
+          isComplete ? 'opacity-70' : 'opacity-100',
+          cursorClassName,
+        )}
+      />
     </span>
   );
 }

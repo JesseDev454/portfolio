@@ -3,7 +3,7 @@ import { Section } from '../../components/ui/Section';
 import { SectionHeading } from '../../components/ui/SectionHeading';
 import { SocialIcon } from '../../components/ui/SocialIcon';
 import { contactContent, siteConfig } from '../../data/site';
-import { fadeInUp, revealViewport } from '../../lib/motion';
+import { revealViewport, slideInLeft, slideInRight } from '../../lib/motion';
 
 export function ContactSection() {
   return (
@@ -12,9 +12,10 @@ export function ContactSection() {
         <SectionHeading
           eyebrow={contactContent.eyebrow}
           title={contactContent.title}
+          motionVariant={slideInLeft}
         />
 
-        <motion.div initial="hidden" whileInView="visible" viewport={revealViewport} variants={fadeInUp}>
+        <motion.div initial="hidden" whileInView="visible" viewport={revealViewport} variants={slideInRight}>
           <div className="max-w-2xl">
             <div className="space-y-4">
               <address className="not-italic">
