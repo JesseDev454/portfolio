@@ -17,13 +17,14 @@ export function ContactSection() {
 
         <motion.div initial="hidden" whileInView="visible" viewport={revealViewport} variants={slideInRight}>
           <div className="max-w-2xl">
+            <p className="mb-8 text-base leading-8 text-[#bbc9cf]">{contactContent.description}</p>
             <div className="space-y-4">
               <address className="not-italic">
                 <a
                   href={contactContent.primaryHref}
-                  className="group inline-flex max-w-full items-center gap-4 text-left text-slate-100 transition hover:text-cyan-200"
+                  className="group inline-flex max-w-full items-center gap-4 text-left text-[#e5e2e1] transition hover:text-[#a5e7ff]"
                 >
-                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-cyan-200">
+                  <span className="flex h-11 w-11 flex-none items-center justify-center rounded border border-white/10 bg-white/[0.04] text-[#a5e7ff]">
                     <MailIcon />
                   </span>
                   <span className="break-all text-lg font-medium leading-7 sm:text-xl">{contactContent.primaryValue}</span>
@@ -32,10 +33,10 @@ export function ContactSection() {
 
               <a
                 href={contactContent.phoneHref}
-                className="group inline-flex max-w-full items-center gap-4 text-left text-slate-100 transition hover:text-cyan-200"
+                className="group inline-flex max-w-full items-center gap-4 text-left text-[#e5e2e1] transition hover:text-[#a5e7ff]"
                 aria-label={`Call ${contactContent.phoneValue}`}
               >
-                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-cyan-200">
+                <span className="flex h-11 w-11 flex-none items-center justify-center rounded border border-white/10 bg-white/[0.04] text-[#a5e7ff]">
                   <PhoneIcon />
                 </span>
                 <span className="break-words text-lg font-medium leading-7 sm:text-xl">{contactContent.phoneValue}</span>
@@ -50,7 +51,7 @@ export function ContactSection() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={`${link.label} profile`}
-                  className="interactive-surface inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-slate-100"
+                  className="interactive-surface inline-flex items-center gap-3 rounded border border-white/10 bg-black/30 px-4 py-3 font-mono text-xs uppercase tracking-[0.1em] text-[#e5e2e1]"
                 >
                   <SocialIcon label={link.label} className="h-4 w-4" />
                   {link.label}

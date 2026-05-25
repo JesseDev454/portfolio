@@ -1,4 +1,4 @@
-type SocialLabel = 'GitHub' | 'LinkedIn' | 'Facebook' | 'daily.dev';
+type SocialLabel = 'GitHub' | 'LinkedIn' | 'Facebook';
 
 type SocialIconProps = {
   label: SocialLabel;
@@ -38,18 +38,5 @@ export function SocialIcon({ label, className }: SocialIconProps) {
       </svg>
     );
   }
-
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
-      <rect x="4.5" y="4.5" width="15" height="15" rx="3.5" fill="none" stroke="currentColor" strokeWidth="1.7" />
-      <path
-        d="M8.5 12.5h3.2a2.8 2.8 0 1 0 0-5.6H8.5v9.6h5a3 3 0 0 0 0-6h-1.8"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
+  return null;
 }

@@ -7,7 +7,7 @@ type CardProps = HTMLAttributes<HTMLDivElement> & {
 
 export function Card({ children, className, ...props }: CardProps) {
   return (
-    <div className={cn('surface tech-outline interactive-surface rounded-[1.75rem] shadow-soft', className)} {...props}>
+    <div className={cn('glass-panel tech-outline interactive-surface scanline-card relative rounded-lg', className)} {...props}>
       {children}
     </div>
   );

@@ -4,6 +4,7 @@ export const siteConfig = {
   name: 'Goodluck Kassa',
   role: 'Fullstack Developer',
   email: 'goodluckkassa6@gmail.com',
+  phone: '(+234) 9133343147',
   githubUrl: 'https://github.com/JesseDev454',
   nav: [
     { label: 'Home', href: '#home', id: 'home' },
@@ -24,7 +25,7 @@ export const heroContent = {
   title: 'Goodluck Kassa',
   subtitle: 'Fullstack Developer',
   description:
-    'I build full-stack products with reliable APIs, scalable backend systems, and polished interfaces that feel fast, clear, and production-ready.',
+    'I build practical full-stack products, reliable backend workflows, and responsive interfaces that feel clear, fast, and ready for real users.',
   primaryCta: { label: 'View Projects', href: '#projects' },
   secondaryCta: { label: 'Contact Me', href: '#contact' },
   highlights: [
@@ -43,12 +44,11 @@ export const heroContent = {
 } as const;
 
 export const aboutContent = {
-  eyebrow: 'About',
-  title: 'I build software that is clear, reliable, and ready to scale.',
+  eyebrow: '01. About Me',
   paragraphs: [
-    'I build full-stack products, backend services, and frontend interfaces with the same priority: ship software that works well, reads clearly, and holds up in production.',
-    'My work sits across API design, service architecture, database modeling, and UI implementation. I care about decisions that make systems easier to extend, debug, and operate over time.',
-    'Whether the task is a backend workflow or a product-facing interface, I aim for practical solutions, consistent execution, and software that feels considered from end to end.',
+    'I build full-stack products, backend systems, and frontend interfaces that are practical, reliable, and easy to use.',
+    'My work covers API design, authentication, database modeling, service architecture, and responsive UI implementation. I care about building software that works well, is easy to maintain, and feels polished for real users.',
+    'Whether I am working on a backend workflow or a product-facing interface, I focus on clear structure, clean execution, and building things that can actually hold up beyond a demo.',
   ],
   highlightsTitle: 'How I approach building',
   highlights: [
@@ -60,46 +60,35 @@ export const aboutContent = {
 } as const;
 
 export const skillsContent = {
-  eyebrow: 'My Skills',
-  title: 'A focused stack for modern product development.',
-  description:
-    'A practical stack for building modern products across the interface, API, and data layers.',
-  groups: [
-    {
-      title: 'Frontend',
-      summary: 'Modern frontend tools for responsive interfaces, reusable UI, and clean product implementation.',
-      items: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    },
-    {
-      title: 'Backend',
-      summary: 'Backend foundations for service logic, API design, authentication, and application structure.',
-      items: ['Node.js', 'Express', 'REST APIs', 'Authentication'],
-    },
-    {
-      title: 'Databases',
-      summary: 'Relational data tools for structured models, predictable queries, and maintainable persistence.',
-      items: ['MySQL', 'PostgreSQL', 'TypeORM'],
-    },
-    {
-      title: 'Tools / Workflow',
-      summary: 'Workflow tools that support collaboration, debugging, versioning, and delivery.',
-      items: ['Git', 'GitHub', 'Postman', 'Docker'],
-    },
+  eyebrow: '02. Skills',
+  items: [
+    'React',
+    'TypeScript',
+    'Tailwind CSS',
+    'Vite',
+    'Node.js',
+    'Express',
+    'REST APIs',
+    'Authentication',
+    'MySQL',
+    'PostgreSQL',
+    'TypeORM',
+    'Git',
+    'GitHub',
+    'Postman',
+    'Docker',
   ],
 } as const;
 
 export const featuredProjectsContent = {
-  eyebrow: 'Featured Projects',
-  title: 'Projects that show how I build products and systems.',
-  description:
-    'A selection of work across full-stack delivery, backend architecture, and polished interface execution.',
+  eyebrow: '03. Featured Projects',
   projects: [
     {
       name: 'Dishpatch',
       category: 'Full-Stack',
       description:
-        'A full-stack delivery platform built around clear operational workflows, structured order management, and a polished interface for day-to-day product use.',
-      stack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL'],
+        'A full-stack food ordering and restaurant management platform that lets restaurants manage menus, receive customer orders, and handle real-time order workflows through a clean dashboard.',
+      stack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL/TypeORM', 'Paystack'],
       previewLabel: '',
       links: [
         { label: 'Live Demo', href: 'https://dishpatchhq.com/' },
@@ -110,8 +99,8 @@ export const featuredProjectsContent = {
       name: 'Event-Driven Notification Platform',
       category: 'Backend',
       description:
-        'A backend platform for processing domain events, coordinating asynchronous delivery, and modeling services that need reliability beyond simple request-response flows.',
-      stack: ['Node.js', 'Redis', 'Queues', 'Webhooks', 'Docker'],
+        'A backend platform designed around event ingestion, queue-based processing, delivery attempts, retries, and provider adapters for reliable asynchronous notification workflows.',
+      stack: ['Node.js', 'Express', 'TypeScript', 'PostgreSQL', 'Redis', 'BullMQ'],
       previewLabel: '',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/event-driven-notification-platform' }],
     },
@@ -119,8 +108,8 @@ export const featuredProjectsContent = {
       name: 'Authentication Service API',
       category: 'Backend',
       description:
-        'A focused authentication service covering secure account flows, token-based access, and boundaries that fit cleanly into larger product architecture.',
-      stack: ['Node.js', 'Express', 'JWT', 'PostgreSQL'],
+        'A secure authentication service with email verification, JWT access tokens, refresh token rotation, password reset flows, role-based authorization, rate limiting, and API documentation.',
+      stack: ['Node.js', 'Express', 'PostgreSQL', 'JWT', 'bcrypt', 'Zod', 'Swagger'],
       previewLabel: '',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/auth-api' }],
     },
@@ -128,8 +117,8 @@ export const featuredProjectsContent = {
       name: 'SaaS Landing Page Template',
       category: 'Frontend',
       description:
-        'A product-style landing page template built to showcase structured messaging, polished conversion sections, and strong frontend execution.',
-      stack: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        'A polished SaaS landing page template built with modern layout structure, responsive sections, strong visual hierarchy, and clean frontend execution.',
+      stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
       previewLabel: '',
       links: [
         { label: 'Live Demo', href: 'https://saas-landing-page-template-rho.vercel.app/' },
@@ -140,49 +129,46 @@ export const featuredProjectsContent = {
 } as const;
 
 export const otherProjectsContent = {
-  eyebrow: 'Other Projects',
-  title: 'Additional work across APIs, templates, and mobile tooling.',
-  description:
-    'More projects that expand the stack: backend utilities, frontend templates, and mobile workflows built with the same focus on clarity and execution.',
+  eyebrow: '04. Other Projects',
   projects: [
     {
       name: 'Image Upload Service',
       category: 'Backend',
       summary:
-        'A backend upload service focused on media handling, storage coordination, and structured file workflows for hosted assets.',
-      stack: ['Node.js', 'Express', 'Cloud Storage'],
-      previewLabel: 'Storage workflow',
+        'A backend image upload service for handling file validation, Cloudinary uploads, image metadata, transformations, and structured media management.',
+      stack: ['Node.js', 'Express', 'TypeScript', 'PostgreSQL', 'TypeORM', 'Cloudinary', 'Multer'],
+      previewLabel: '',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/image-upload-service-api' }],
-    },
-    {
-      name: 'Business Website Template',
-      category: 'Frontend',
-      summary:
-        'A business-focused website template built around clean hierarchy, responsive layout, and a professional marketing presentation.',
-      stack: ['React', 'TypeScript', 'Tailwind CSS'],
-      previewLabel: 'Marketing site',
-      links: [
-        { label: 'Live Demo', href: 'https://business-website-template-ochre.vercel.app/' },
-        { label: 'GitHub', href: 'https://github.com/JesseDev454/business-website-template' },
-      ],
     },
     {
       name: 'Attendance Management System',
       category: 'Mobile',
       summary:
-        'A mobile attendance workflow built for structured session tracking, fast check-ins, and practical Android-first operation.',
-      stack: ['Kotlin', 'Android', 'QR Scanning'],
-      previewLabel: 'Mobile check-in',
+        'A mobile attendance management system built around QR-based check-ins, fast scanning, and lightweight attendance tracking.',
+      stack: ['Android', 'Kotlin', 'QR Scanning'],
+      previewLabel: '',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/Attendance-Management-System' }],
+    },
+    {
+      name: 'Business Website Template',
+      category: 'Frontend',
+      summary:
+        'A professional business website template with clean sections, responsive layout, strong marketing hierarchy, and polished presentation for service-based businesses.',
+      stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+      previewLabel: '',
+      links: [
+        { label: 'Live Demo', href: 'https://business-website-template-ochre.vercel.app/' },
+        { label: 'GitHub', href: 'https://github.com/JesseDev454/business-website-template' },
+      ],
     },
   ],
 } as const;
 
 export const contactContent = {
-  eyebrow: 'Contact Me',
-  title: "Let's talk about your next product or system.",
+  eyebrow: '05. Contact',
+  title: 'Let us talk about what you are building.',
   description:
-    'Email is the best way to reach me. I am open to product work, freelance projects, engineering roles, and collaborations that need strong full-stack execution.',
+    'I am open to product work, freelance projects, engineering roles, and collaborations that need strong full-stack execution.',
   primaryLabel: 'Email',
   primaryValue: 'goodluckkassa6@gmail.com',
   primaryHref: 'mailto:goodluckkassa6@gmail.com',

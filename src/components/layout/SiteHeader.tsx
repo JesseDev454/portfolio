@@ -49,26 +49,26 @@ export function SiteHeader() {
   }, [isMenuOpen]);
 
   return (
-    <header ref={headerRef} className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/64 shadow-[0_12px_38px_rgba(2,6,23,0.26)] backdrop-blur-2xl">
-      <Container className="flex items-center justify-between gap-3 py-3 sm:gap-4 sm:py-4">
-        <a href="#home" className="group inline-flex min-w-0 items-center gap-2.5 text-slate-50 sm:gap-3">
-          <span className="flex h-8 w-8 flex-none items-center justify-center rounded-[1rem] border border-cyan-400/16 bg-[linear-gradient(180deg,rgba(103,232,249,0.18),rgba(255,255,255,0.02))] text-[0.72rem] font-bold tracking-[0.04em] text-cyan-100 shadow-[0_12px_30px_rgba(8,145,178,0.12)] transition duration-200 group-hover:border-cyan-300/28 group-hover:text-white sm:h-9 sm:w-9 sm:rounded-2xl sm:text-sm">
+    <header ref={headerRef} className="sticky top-0 z-50 border-b border-white/10 bg-[#131313]/70 shadow-[0_0_30px_rgba(71,214,255,0.1)] backdrop-blur-lg">
+      <Container className="flex items-center justify-between gap-3 py-3.5 sm:gap-4">
+        <a href="#home" className="group inline-flex min-w-0 items-center gap-2.5 text-[#e5e2e1] sm:gap-3">
+          <span className="text-glow font-display text-2xl font-extrabold text-[#a5e7ff] transition duration-200 group-hover:text-white">
             GK
           </span>
-          <span className="truncate font-display text-[0.98rem] font-bold tracking-tight sm:text-lg">{siteConfig.name}</span>
+          <span className="sr-only">{siteConfig.name}</span>
         </a>
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] md:flex">
-          {siteConfig.nav.map((item) => (
+        <nav aria-label="Primary" className="hidden items-center gap-6 md:flex lg:gap-10">
+          {siteConfig.nav.filter((item) => item.id !== 'home').map((item) => (
             <a
               key={item.href}
               href={item.href}
               aria-current={activeSection === item.id ? 'page' : undefined}
               className={cn(
-                'rounded-full px-4 py-2 text-sm font-medium transition duration-200',
+                'rounded px-3 py-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] transition duration-200',
                 activeSection === item.id
-                  ? 'bg-[linear-gradient(180deg,rgba(103,232,249,0.14),rgba(255,255,255,0.04))] text-cyan-100 shadow-[0_10px_30px_rgba(8,145,178,0.1)]'
-                  : 'text-slate-400 hover:-translate-y-0.5 hover:bg-white/5 hover:text-slate-100',
+                  ? 'bg-white/5 text-[#a5e7ff]'
+                  : 'text-[#e5e2e1] hover:-translate-y-0.5 hover:bg-white/5 hover:text-[#a5e7ff]',
               )}
             >
               {item.label}
@@ -76,13 +76,21 @@ export function SiteHeader() {
           ))}
         </nav>
 
+        <a
+          href="/Goodluck_Kassa.docx"
+          download="Goodluck_Kassa_Resume.docx"
+          className="hidden rounded bg-[linear-gradient(90deg,#a5e7ff,#9d05ff)] px-5 py-2.5 font-mono text-[0.68rem] font-bold uppercase tracking-[0.12em] text-[#003543] shadow-[0_0_20px_rgba(165,231,255,0.16)] transition hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(165,231,255,0.44)] md:inline-flex"
+        >
+          Resume
+        </a>
+
         <button
           type="button"
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
           aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           onClick={() => setIsMenuOpen((value) => !value)}
-          className="interactive-surface flex h-10 w-10 flex-none items-center justify-center rounded-[1rem] border border-white/10 bg-white/[0.04] text-slate-100 md:hidden"
+          className="interactive-surface flex h-10 w-10 flex-none items-center justify-center rounded border border-white/10 bg-white/[0.04] text-[#e5e2e1] md:hidden"
         >
           {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
@@ -93,20 +101,20 @@ export function SiteHeader() {
           <Container className="relative">
             <div
               id="mobile-navigation"
-              className="surface tech-outline absolute right-0 top-2 w-full max-w-[17.5rem] max-h-[min(17rem,calc(100vh-5rem))] overflow-y-auto rounded-[1.3rem] p-3 shadow-glow"
+              className="glass-panel tech-outline absolute right-0 top-2 w-full max-w-[15.5rem] max-h-[min(16rem,calc(100vh-5rem))] overflow-y-auto rounded-lg p-2 shadow-glow"
             >
               <nav aria-label="Mobile Primary" className="flex flex-col gap-1">
-                {siteConfig.nav.map((item) => (
+                {siteConfig.nav.filter((item) => item.id !== 'home').map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     aria-current={activeSection === item.id ? 'page' : undefined}
                     onClick={() => setIsMenuOpen(false)}
                     className={cn(
-                      'rounded-[0.95rem] px-3 py-2.5 text-[0.94rem] font-medium transition duration-200',
+                      'rounded px-3 py-2.5 font-mono text-xs uppercase tracking-[0.1em] transition duration-200',
                       activeSection === item.id
-                        ? 'bg-[linear-gradient(180deg,rgba(103,232,249,0.14),rgba(255,255,255,0.04))] text-cyan-100'
-                        : 'text-slate-200 hover:bg-white/5 hover:text-white',
+                        ? 'bg-white/5 text-[#a5e7ff]'
+                        : 'text-[#e5e2e1] hover:bg-white/5 hover:text-white',
                     )}
                   >
                     {item.label}

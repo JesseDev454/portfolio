@@ -81,7 +81,7 @@ export function TypewriterText({
   return (
     <span className={cn('inline align-top', className)}>
       <span className="sr-only">{text}</span>
-      <span aria-hidden="true">{displayedText}</span>
+      <span aria-hidden="true">{displayedText.replace(/ /g, '\u00a0')}</span>
       <span
         aria-hidden="true"
         className={cn(

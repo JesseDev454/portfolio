@@ -25,13 +25,13 @@ export function SectionHeading({
       viewport={revealViewport}
       variants={motionVariant}
     >
-      <p className="eyebrow-chip text-[11px] font-semibold uppercase tracking-[0.28em] text-cyan-100">{eyebrow}</p>
+      <p className="section-label">{eyebrow}</p>
       {title ? (
-        <h2 className="mt-5 font-display text-3xl font-bold tracking-[-0.04em] text-white sm:text-4xl lg:text-[3rem] lg:leading-[1.02]">
+        <h2 className="mt-5 font-display text-3xl font-bold text-[#e5e2e1] sm:text-4xl lg:text-5xl lg:leading-tight">
           {title}
         </h2>
       ) : null}
-      {description ? <div className="mt-6 text-base leading-8 text-slate-300">{description}</div> : null}
+      {description ? <div className="mt-6 text-base leading-8 text-[#bbc9cf]">{description}</div> : null}
     </motion.div>
   );
 }

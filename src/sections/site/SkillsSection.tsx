@@ -7,13 +7,6 @@ import { skillsContent } from '../../data/site';
 import { fadeInUp, revealViewport, staggerContainer } from '../../lib/motion';
 
 export function SkillsSection() {
-  const skills = skillsContent.groups.flatMap((group) =>
-    group.items.map((item) => ({
-      name: item,
-      category: group.title,
-    })),
-  );
-
   return (
     <Section id="skills">
       <SectionHeading eyebrow={skillsContent.eyebrow} />
@@ -23,23 +16,20 @@ export function SkillsSection() {
         whileInView="visible"
         viewport={revealViewport}
         variants={staggerContainer}
-        className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+        className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
       >
-        {skills.map((skill) => (
-          <motion.div key={skill.name} variants={fadeInUp} className="h-full">
-            <Card className="group h-full p-4 sm:p-5">
-              <div className="flex h-full flex-col justify-between">
+        {skillsContent.items.map((skill, index) => (
+          <motion.div key={skill} variants={fadeInUp} transition={{ delay: index * 0.035 }} className="h-full">
+            <Card className="group h-full min-h-[7.25rem] p-4 sm:p-5">
+              <div className="flex h-full flex-col justify-between gap-5">
                 <div className="flex items-start justify-between gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-slate-950/70 text-cyan-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
-                    <SkillIcon skill={skill.name} className="h-5 w-5" />
+                  <span className="flex h-10 w-10 items-center justify-center rounded border border-white/10 bg-black/40 text-[#a5e7ff] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+                    <SkillIcon skill={skill} className="h-5 w-5" />
                   </span>
-                  <span className="h-2.5 w-2.5 rounded-full bg-cyan-300/80 shadow-[0_0_18px_rgba(103,232,249,0.35)]" />
+                  <span className="h-2 w-2 rounded-full bg-[#00fd93] shadow-[0_0_18px_rgba(0,253,147,0.5)]" />
                 </div>
 
-                <div className="mt-8">
-                  <h3 className="text-base font-semibold tracking-[-0.02em] text-white sm:text-[1.02rem]">{skill.name}</h3>
-                  <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500">{skill.category}</p>
-                </div>
+                <h3 className="font-mono text-sm font-medium text-[#e5e2e1] sm:text-base">{skill}</h3>
               </div>
             </Card>
           </motion.div>
