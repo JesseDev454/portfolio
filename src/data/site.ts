@@ -25,7 +25,7 @@ export const heroContent = {
   title: 'Goodluck Kassa',
   subtitle: 'Fullstack Developer',
   description:
-    'I build practical full-stack products, reliable backend workflows, and responsive interfaces that feel clear, fast, and ready for real users.',
+    'I build full-stack apps, APIs, and dashboards that are clear to use and solid behind the scenes. I like working on the parts people see and the systems that keep everything running.',
   primaryCta: { label: 'View Projects', href: '#projects' },
   secondaryCta: { label: 'Contact Me', href: '#contact' },
   highlights: [
@@ -35,7 +35,7 @@ export const heroContent = {
   ],
   stats: [
     { label: 'Focus', value: 'Full-stack products, backend services, and interface systems' },
-    { label: 'Approach', value: 'Clear architecture, reliable delivery, and polished execution' },
+    { label: 'Approach', value: 'Simple structure, steady delivery, and code that is easy to come back to' },
   ],
   portrait: {
     src: profilePicture,
@@ -46,16 +46,16 @@ export const heroContent = {
 export const aboutContent = {
   eyebrow: '01. About Me',
   paragraphs: [
-    'I build full-stack products, backend systems, and frontend interfaces that are practical, reliable, and easy to use.',
-    'My work covers API design, authentication, database modeling, service architecture, and responsive UI implementation. I care about building software that works well, is easy to maintain, and feels polished for real users.',
-    'Whether I am working on a backend workflow or a product-facing interface, I focus on clear structure, clean execution, and building things that can actually hold up beyond a demo.',
+    'I’m a fullstack developer focused on building products that are useful, maintainable, and easy to understand.',
+    'Most of my work sits between backend systems and frontend interfaces: APIs, auth flows, databases, dashboards, and responsive UI.',
+    'I care about clean structure, sensible decisions, and finishing things properly. Not just making a demo look good, but building something that can keep working after it ships.',
   ],
   highlightsTitle: 'How I approach building',
   highlights: [
-    'Clean architecture with practical tradeoffs',
-    'Reliable APIs and service design',
-    'Full-stack builds with product thinking',
-    'Frontend work with strong visual clarity',
+    'Simple structure with tradeoffs that make sense',
+    'APIs that are clear to use and easy to maintain',
+    'Full-stack builds that connect the product and the system',
+    'Frontend work that feels clear on real screens',
   ],
 } as const;
 
@@ -87,7 +87,7 @@ export const featuredProjectsContent = {
       name: 'Dishpatch',
       category: 'Full-Stack',
       description:
-        'A full-stack food ordering and restaurant management platform that lets restaurants manage menus, receive customer orders, and handle real-time order workflows through a clean dashboard.',
+        'A food ordering and restaurant management platform where restaurants can manage menus, receive orders, and run day-to-day order handling from a clean dashboard.',
       stack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL/TypeORM', 'Paystack'],
       previewLabel: '',
       links: [
@@ -99,7 +99,7 @@ export const featuredProjectsContent = {
       name: 'Event-Driven Notification Platform',
       category: 'Backend',
       description:
-        'A backend platform designed around event ingestion, queue-based processing, delivery attempts, retries, and provider adapters for reliable asynchronous notification workflows.',
+        'A backend notification system built around events, queues, retries, and provider adapters, so messages can be processed and delivered more reliably in the background.',
       stack: ['Node.js', 'Express', 'TypeScript', 'PostgreSQL', 'Redis', 'BullMQ'],
       previewLabel: '',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/event-driven-notification-platform' }],
@@ -108,7 +108,7 @@ export const featuredProjectsContent = {
       name: 'Authentication Service API',
       category: 'Backend',
       description:
-        'A secure authentication service with email verification, JWT access tokens, refresh token rotation, password reset flows, role-based authorization, rate limiting, and API documentation.',
+        'An auth API with email verification, JWT access tokens, refresh token rotation, password resets, role-based access, rate limiting, and Swagger docs.',
       stack: ['Node.js', 'Express', 'PostgreSQL', 'JWT', 'bcrypt', 'Zod', 'Swagger'],
       previewLabel: '',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/auth-api' }],
@@ -117,7 +117,7 @@ export const featuredProjectsContent = {
       name: 'SaaS Landing Page Template',
       category: 'Frontend',
       description:
-        'A polished SaaS landing page template built with modern layout structure, responsive sections, strong visual hierarchy, and clean frontend execution.',
+        'A responsive SaaS landing page template with clean sections, strong spacing, and a layout that works well for product or service pages.',
       stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
       previewLabel: '',
       links: [
@@ -135,7 +135,7 @@ export const otherProjectsContent = {
       name: 'Image Upload Service',
       category: 'Backend',
       summary:
-        'A backend image upload service for handling file validation, Cloudinary uploads, image metadata, transformations, and structured media management.',
+        'An API for uploading and managing images with validation, Cloudinary storage, metadata handling, transformations, and organized media records.',
       stack: ['Node.js', 'Express', 'TypeScript', 'PostgreSQL', 'TypeORM', 'Cloudinary', 'Multer'],
       previewLabel: '',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/image-upload-service-api' }],
@@ -144,7 +144,7 @@ export const otherProjectsContent = {
       name: 'Attendance Management System',
       category: 'Mobile',
       summary:
-        'A mobile attendance management system built around QR-based check-ins, fast scanning, and lightweight attendance tracking.',
+        'A mobile attendance app built around QR check-ins, quick scanning, and simple attendance tracking.',
       stack: ['Android', 'Kotlin', 'QR Scanning'],
       previewLabel: '',
       links: [{ label: 'GitHub', href: 'https://github.com/JesseDev454/Attendance-Management-System' }],
@@ -153,7 +153,7 @@ export const otherProjectsContent = {
       name: 'Business Website Template',
       category: 'Frontend',
       summary:
-        'A professional business website template with clean sections, responsive layout, strong marketing hierarchy, and polished presentation for service-based businesses.',
+        'A responsive business website template for service-based brands, with clear sections, strong calls to action, and a professional layout.',
       stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
       previewLabel: '',
       links: [
@@ -166,9 +166,9 @@ export const otherProjectsContent = {
 
 export const contactContent = {
   eyebrow: '05. Contact',
-  title: 'Let us talk about what you are building.',
+  title: 'Have a project in mind?',
   description:
-    'I am open to product work, freelance projects, engineering roles, and collaborations that need strong full-stack execution.',
+    'Send me a message if you need help building a web app, backend API, dashboard, landing page, or full-stack product.',
   primaryLabel: 'Email',
   primaryValue: 'goodluckkassa6@gmail.com',
   primaryHref: 'mailto:goodluckkassa6@gmail.com',
