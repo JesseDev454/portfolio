@@ -1,37 +1,14 @@
-import { siteConfig } from '../../data/site';
-import { Container } from './Container';
-import { SocialIcon } from '../ui/SocialIcon';
+import { siteConfig, socialLinks } from '../../data/site';
 
 export function SiteFooter() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="section-divider mt-8 border-t border-white/10 bg-[#0e0e0e]/72 py-10 sm:py-12">
-      <Container className="flex flex-col items-center gap-6 text-center text-sm text-[#bbc9cf]">
-        <a href="#home" className="text-glow font-display text-3xl font-extrabold text-[#e5e2e1]">
-          GK
-        </a>
-
-        <div className="flex flex-wrap items-center justify-center gap-5">
-          {siteConfig.socialLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label={`${link.label} profile`}
-              className="hover-link inline-flex items-center gap-2 font-mono text-xs text-[#bbc9cf]"
-            >
-              <SocialIcon label={link.label} className="h-4 w-4" />
-              {link.label}
-            </a>
-          ))}
-        </div>
-
-        <p className="font-mono text-xs uppercase tracking-[0.08em] text-[#bbc9cf]">
-          (c) {year} Goodluck Kassa. Engineered for precision.
-        </p>
-      </Container>
+    <footer className="site-footer">
+      <div className="editorial-container footer-top">
+        <a className="brand-mark" href="#home" aria-label="Goodluck Jesse Kassa home"><span>G</span><b>K</b></a>
+        <div><strong>{siteConfig.name}</strong><p>Building for a better campus — and beyond.</p></div>
+        <div className="footer-socials">{socialLinks.map((link) => <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noreferrer noopener' : undefined}>{link.label}</a>)}</div>
+      </div>
+      <div className="editorial-container footer-bottom"><span>© {new Date().getFullYear()} Goodluck Jesse Kassa.</span><span>{siteConfig.location}</span></div>
     </footer>
   );
 }
