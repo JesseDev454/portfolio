@@ -68,7 +68,7 @@ export function HomeView({ navigate }: { navigate: Navigate }) {
           <p className="hero-body">I build web apps and backend systems, contribute to real products, and help students grow through tech. I’m a Software Engineering student with a deep interest in solving meaningful problems and using technology to create opportunities for more people.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a className="button button-primary" href="#work" onClick={() => navigate('work')}>View my work <span aria-hidden="true">→</span></a>
-            <a className="button button-secondary" href={siteConfig.resumeHref} download="Goodluck_Jesse_Kassa_Resume.docx">Download resume <span aria-hidden="true">↓</span></a>
+            <a className="button button-secondary" href={siteConfig.resumeHref} download="Goodluck_Jesse_Kassa_Resume_2026.pdf">Download resume <span aria-hidden="true">↓</span></a>
           </div>
         </Reveal>
         <Reveal className="hero-portrait-wrap" delay={0.08}>
@@ -194,7 +194,7 @@ export function AboutView() {
   );
 }
 
-function ContactLink({ label, value, href, copyValue }: { label: string; value: string; href: string; copyValue: string }) {
+function ContactLink({ label, value, href, copyValue, download }: { label: string; value: string; href: string; copyValue: string; download?: string }) {
   const [status, setStatus] = useState('');
   const copy = async () => {
     try {
@@ -204,14 +204,14 @@ function ContactLink({ label, value, href, copyValue }: { label: string; value: 
     } catch { setStatus('Copy unavailable'); }
     window.setTimeout(() => setStatus(''), 1800);
   };
-  return <div className="contact-link"><a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer noopener' : undefined}><span className="contact-icon" aria-hidden="true">{label === 'Email' ? '@' : label === 'Phone' ? '＋' : label === 'Resume' ? '↓' : '↗'}</span><span><strong>{label}</strong><small>{value}</small></span></a><button type="button" className="copy-button" onClick={copy} aria-label={`Copy ${label}`}><span aria-live="polite">{status || 'Copy'}</span></button></div>;
+  return <div className="contact-link"><a href={href} download={download} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer noopener' : undefined}><span className="contact-icon" aria-hidden="true">{label === 'Email' ? '@' : label === 'Phone' ? '＋' : label === 'Resume' ? '↓' : '↗'}</span><span><strong>{label}</strong><small>{value}</small></span></a><button type="button" className="copy-button" onClick={copy} aria-label={`Copy ${label}`}><span aria-live="polite">{status || 'Copy'}</span></button></div>;
 }
 
 export function ContactView() {
   return (
     <div className="editorial-container view-stack">
       <Reveal><ViewIntro eyebrow="Get in touch" title="Let’s Work" accent="Together" description="I’m open to opportunities, collaborations, and interesting projects." /></Reveal>
-      <div className="contact-grid"><Reveal className="contact-panel"><p className="micro-label">Contact me</p><h2>Good conversations start simply.</h2><p className="section-body">Email is the best way to reach me. You can also find my work and professional profile below.</p><div className="contact-links"><ContactLink label="Email" value={siteConfig.email} href={`mailto:${siteConfig.email}`} copyValue={siteConfig.email} /><ContactLink label="Phone" value={siteConfig.phone} href="tel:+2349133343147" copyValue={siteConfig.phone} /><ContactLink label="LinkedIn" value="linkedin.com/in/goodluck-kassa-a4a43a331" href={siteConfig.linkedinUrl} copyValue={siteConfig.linkedinUrl} /><ContactLink label="GitHub" value="github.com/JesseDev454" href={siteConfig.githubUrl} copyValue={siteConfig.githubUrl} /><ContactLink label="Resume" value="View or download my résumé" href={siteConfig.resumeHref} copyValue={`${window.location.origin}${siteConfig.resumeHref}`} /></div></Reveal><Reveal className="contact-panel contact-email-panel" delay={0.08}><p className="micro-label">Direct email</p><h2>Tell me what you’re building.</h2><p>Use the button below to open your email client with a clear subject line. There is no pretend form submission behind this page.</p><a className="button button-primary" href={`mailto:${siteConfig.email}?subject=Project%20enquiry%20for%20Goodluck%20Jesse%20Kassa`}>Email Goodluck <span aria-hidden="true">→</span></a><div className="contact-statement"><span className="eyebrow-dot" /><span>Ideas · People · Impact</span></div></Reveal></div>
+      <div className="contact-grid"><Reveal className="contact-panel"><p className="micro-label">Contact me</p><h2>Good conversations start simply.</h2><p className="section-body">Email is the best way to reach me. You can also find my work and professional profile below.</p><div className="contact-links"><ContactLink label="Email" value={siteConfig.email} href={`mailto:${siteConfig.email}`} copyValue={siteConfig.email} /><ContactLink label="Phone" value={siteConfig.phone} href="tel:+2349133343147" copyValue={siteConfig.phone} /><ContactLink label="LinkedIn" value="linkedin.com/in/goodluck-kassa-a4a43a331" href={siteConfig.linkedinUrl} copyValue={siteConfig.linkedinUrl} /><ContactLink label="GitHub" value="github.com/JesseDev454" href={siteConfig.githubUrl} copyValue={siteConfig.githubUrl} /><ContactLink label="Resume" value="Download my résumé (PDF)" href={siteConfig.resumeHref} copyValue={`${window.location.origin}${siteConfig.resumeHref}`} download="Goodluck_Jesse_Kassa_Resume_2026.pdf" /></div></Reveal><Reveal className="contact-panel contact-email-panel" delay={0.08}><p className="micro-label">Direct email</p><h2>Tell me what you’re building.</h2><p>Use the button below to open your email client with a clear subject line. There is no pretend form submission behind this page.</p><a className="button button-primary" href={`mailto:${siteConfig.email}?subject=Project%20enquiry%20for%20Goodluck%20Jesse%20Kassa`}>Email Goodluck <span aria-hidden="true">→</span></a><div className="contact-statement"><span className="eyebrow-dot" /><span>Ideas · People · Impact</span></div></Reveal></div>
     </div>
   );
 }

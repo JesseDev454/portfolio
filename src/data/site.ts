@@ -38,7 +38,7 @@ export const siteConfig = {
   location: 'Abuja, Nigeria',
   email: 'goodluckkassa6@gmail.com',
   phone: '+234 913 334 3147',
-  resumeHref: '/Goodluck_Kassa.docx',
+  resumeHref: '/Goodluck_Jesse_Kassa_Resume_2026.pdf',
   githubUrl: 'https://github.com/JesseDev454',
   linkedinUrl: 'https://www.linkedin.com/in/goodluck-kassa-a4a43a331/',
   portfolioUrl: 'https://portfolio-pi-three-79.vercel.app/',

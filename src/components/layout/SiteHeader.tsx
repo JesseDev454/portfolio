@@ -46,10 +46,10 @@ export function SiteHeader({ activeView, onNavigate }: SiteHeaderProps) {
         <nav className="desktop-nav" aria-label="Primary navigation">
           {siteConfig.nav.map((item) => <a key={item.id} href={item.href} onClick={() => handleNav(item.id)} aria-current={activeView === item.id ? 'page' : undefined} className={cn(activeView === item.id && 'nav-active')}>{item.label}</a>)}
         </nav>
-        <a className="resume-link" href={siteConfig.resumeHref} download="Goodluck_Jesse_Kassa_Resume.docx">Resume <span aria-hidden="true">↓</span></a>
+        <a className="resume-link" href={siteConfig.resumeHref} download="Goodluck_Jesse_Kassa_Resume_2026.pdf">Resume <span aria-hidden="true">↓</span></a>
         <button ref={menuButtonRef} type="button" className="menu-button" aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setMenuOpen((open) => !open)}><span /><span /><span /></button>
       </div>
-      {menuOpen ? <div id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">{siteConfig.nav.map((item) => <a key={item.id} href={item.href} onClick={() => handleNav(item.id)} aria-current={activeView === item.id ? 'page' : undefined}>{item.label}</a>)}<a href={siteConfig.resumeHref} download="Goodluck_Jesse_Kassa_Resume.docx" onClick={() => setMenuOpen(false)}>Resume <span aria-hidden="true">↓</span></a></div> : null}
+      {menuOpen ? <div id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">{siteConfig.nav.map((item) => <a key={item.id} href={item.href} onClick={() => handleNav(item.id)} aria-current={activeView === item.id ? 'page' : undefined}>{item.label}</a>)}<a href={siteConfig.resumeHref} download="Goodluck_Jesse_Kassa_Resume_2026.pdf" onClick={() => setMenuOpen(false)}>Resume <span aria-hidden="true">↓</span></a></div> : null}
     </header>
   );
 }
